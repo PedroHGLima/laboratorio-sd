@@ -1,0 +1,88 @@
+|Selecao
+Op[0] => Mux0.IN10
+Op[0] => Mux1.IN10
+Op[0] => Mux2.IN10
+Op[0] => Mux3.IN10
+Op[0] => Mux4.IN5
+Op[0] => Mux5.IN5
+Op[0] => Mux6.IN10
+Op[1] => Mux0.IN9
+Op[1] => Mux1.IN9
+Op[1] => Mux2.IN9
+Op[1] => Mux3.IN9
+Op[1] => Mux6.IN9
+Op[2] => Mux0.IN8
+Op[2] => Mux1.IN8
+Op[2] => Mux2.IN8
+Op[2] => Mux3.IN8
+Op[2] => Mux4.IN4
+Op[2] => Mux5.IN4
+Op[2] => Mux6.IN8
+Zop[0] << fourbitfa:fulla.Z[0]
+Zop[1] << fourbitfa:fulla.Z[1]
+Zop[2] << fourbitfa:fulla.Z[2]
+Zop[3] << fourbitfa:fulla.Z[3]
+Ov << fourbitfa:fulla.C_out
+
+
+|Selecao|fourbitfa:fulla
+X[0] => fa:fa0.A
+X[1] => fa:fa1.A
+X[2] => fa:fa2.A
+X[3] => fa:fa3.A
+Y[0] => fa:fa0.B
+Y[1] => fa:fa1.B
+Y[2] => fa:fa2.B
+Y[3] => fa:fa3.B
+C_in => fa:fa0.Cin
+C_out <= fa:fa3.Cout
+Z[0] <= fa:fa0.Y
+Z[1] <= fa:fa1.Y
+Z[2] <= fa:fa2.Y
+Z[3] <= fa:fa3.Y
+
+
+|Selecao|fourbitfa:fulla|fa:fa0
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Y.IN1
+Cin => Cout.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Selecao|fourbitfa:fulla|fa:fa1
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Y.IN1
+Cin => Cout.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Selecao|fourbitfa:fulla|fa:fa2
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Y.IN1
+Cin => Cout.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Selecao|fourbitfa:fulla|fa:fa3
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Y.IN1
+Cin => Cout.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,37 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Zop[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Zop[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Zop[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Ov",
+					"strict" : false
+				},
+				{
+					"name" : "Op[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Op[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Op[1]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
