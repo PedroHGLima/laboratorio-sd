@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/sd/Documents/alu_nova/impact.xsl
+OUTFILE=/home/sd/Documents/alu_nova/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/home/sd/Documents/alu_nova
+LICENSE=iMPACT
+USER_INFO=iMPACT

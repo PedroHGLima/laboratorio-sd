@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Tue Jun  6 14:02:03 2023
+# Process ID: 5023
+# Log file: /home/sd/Documents/alu_nova/planAhead_run_1/planAhead.log
+# Journal file: /home/sd/Documents/alu_nova/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/sd/Documents/alu_nova/pa.fromHdl.tcl
+update_compile_order -fileset sim_1

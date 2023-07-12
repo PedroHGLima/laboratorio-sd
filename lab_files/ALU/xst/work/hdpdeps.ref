@@ -1,0 +1,5 @@
+V3 3
+FL /home/sd/ALU/somador.vhd 2023/04/18.14:06:55 P.20131013
+EN work/somador 1681839079 FL /home/sd/ALU/somador.vhd PB ieee/std_logic_1164 1381692176
+AR work/somador/Behavioral 1681839080 \
+      FL /home/sd/ALU/somador.vhd EN work/somador 1681839079

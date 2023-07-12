@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/sd/Documents/testes_ops/impact.xsl
+OUTFILE=/home/sd/Documents/testes_ops/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/home/sd/Documents/testes_ops
+LICENSE=iMPACT
+USER_INFO=iMPACT

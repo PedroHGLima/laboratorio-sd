@@ -1,0 +1,16 @@
+V3 10
+FL /home/sd/Documents/alu_nova/fa.vhd 2023/05/16.13:59:50 P.20131013
+EN work/fa 1686074491 FL /home/sd/Documents/alu_nova/fa.vhd PB ieee/std_logic_1164 1381692176
+AR work/fa/Behavioral 1686074492 \
+      FL /home/sd/Documents/alu_nova/fa.vhd EN work/fa 1686074491
+FL /home/sd/Documents/alu_nova/fourbitfa.vhd 2023/06/06.14:00:06 P.20131013
+EN work/fourbitfa 1686070961 FL /home/sd/Documents/alu_nova/fourbitfa.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/fourbitfa/Behavioral 1686070962 \
+      FL /home/sd/Documents/alu_nova/fourbitfa.vhd EN work/fourbitfa 1686070961 \
+      CP fa
+FL /home/sd/Documents/alu_nova/Selecao.vhd 2023/06/06.14:50:13 P.20131013
+EN work/Selecao 0 FL /home/sd/Documents/alu_nova/Selecao.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/Selecao/Behavioral 0 \
+      FL /home/sd/Documents/alu_nova/Selecao.vhd EN work/Selecao 0 CP fa

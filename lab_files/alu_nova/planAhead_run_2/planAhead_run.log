@@ -1,0 +1,78 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in -1437 day(s)
+INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /home/sd/Documents/alu_nova/pa.fromHdl.tcl
+# create_project -name alu -dir "/home/sd/Documents/alu_nova/planAhead_run_2" -part xc3s700anfgg484-5
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "fa.ucf" [current_fileset -constrset]
+Adding file '/home/sd/Documents/alu_nova/fa.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {Selecao.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set_property top Selecao $srcset
+# add_files [list {fa.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc3s700anfgg484-5
+Using Verific elaboration
+Parsing VHDL file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "/home/sd/Documents/alu_nova/Selecao.vhd" into library work
+WARNING: [HDL 9-806] Syntax error near "signal". [/home/sd/Documents/alu_nova/Selecao.vhd:58]
+WARNING: [HDL 9-806] Syntax error near ":=". [/home/sd/Documents/alu_nova/Selecao.vhd:59]
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'fa' instantiated as 'fa0' [/home/sd/Documents/alu_nova/Selecao.vhd:62]
+Resolution: File names need to match cell names: an EDIF definition will be found in fa.edf; an HDL definition may be placed in any Verilog/VHDL file.
+INFO: [Designutils 20-910] Reading macro library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3a/hd_int_macros.edn
+Parsing EDIF File [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3a/hd_int_macros.edn]
+Finished Parsing EDIF File [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3a/hd_int_macros.edn]
+Loading clock regions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/xc3s700an/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/xc3s700an/ClockBuffers.xml
+Loading package from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/xc3s700an/fgg484/Package.xml
+Loading io standards from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3a/IOStandards.xml
+INFO: [Device 21-19] Loading pkg sso from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/xc3s700an/fgg484/SSORules.xml
+Loading list of drcs for the architecture : /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3a/drc.xml
+INFO: [Timing 38-77] Reading timing library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/spartan3a-5.lib.
+INFO: [Timing 38-34] Done reading timing library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/spartan3a-5.lib.
+Parsing UCF File [/home/sd/Documents/alu_nova/fa.ucf]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'X[3]' [/home/sd/Documents/alu_nova/fa.ucf:1]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'Y[0]' [/home/sd/Documents/alu_nova/fa.ucf:3]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'Y[1]' [/home/sd/Documents/alu_nova/fa.ucf:4]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'Y[2]' [/home/sd/Documents/alu_nova/fa.ucf:5]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'Y[3]' [/home/sd/Documents/alu_nova/fa.ucf:6]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'X[2]' [/home/sd/Documents/alu_nova/fa.ucf:7]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'X[1]' [/home/sd/Documents/alu_nova/fa.ucf:8]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'X[0]' [/home/sd/Documents/alu_nova/fa.ucf:9]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'C_out' [/home/sd/Documents/alu_nova/fa.ucf:10]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'C_in' [/home/sd/Documents/alu_nova/fa.ucf:14]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'X[3]' [/home/sd/Documents/alu_nova/fa.ucf:15]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'X[2]' [/home/sd/Documents/alu_nova/fa.ucf:16]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'X[1]' [/home/sd/Documents/alu_nova/fa.ucf:17]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'X[0]' [/home/sd/Documents/alu_nova/fa.ucf:18]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'Y[3]' [/home/sd/Documents/alu_nova/fa.ucf:19]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'Y[2]' [/home/sd/Documents/alu_nova/fa.ucf:20]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'Y[1]' [/home/sd/Documents/alu_nova/fa.ucf:21]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'Y[0]' [/home/sd/Documents/alu_nova/fa.ucf:22]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'C_in' [/home/sd/Documents/alu_nova/fa.ucf:35]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'C_out' [/home/sd/Documents/alu_nova/fa.ucf:36]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'C_out' [/home/sd/Documents/alu_nova/fa.ucf:37]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'C_out' [/home/sd/Documents/alu_nova/fa.ucf:38]
+Finished Parsing UCF File [/home/sd/Documents/alu_nova/fa.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 2d1a8eb6
+open_rtl_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 2783.512 ; gain = 116.148
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin R13 [get_ports N]
+endgroup
+save_constraints

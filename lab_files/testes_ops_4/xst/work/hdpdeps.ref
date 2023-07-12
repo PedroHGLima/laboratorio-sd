@@ -1,0 +1,18 @@
+V3 11
+FL /home/sd/Documents/testes_ops/fa.vhd 2023/05/16.13:59:50 P.20131013
+EN work/fa 1688492758 FL /home/sd/Documents/testes_ops/fa.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/fa/Behavioral 1688492759 \
+      FL /home/sd/Documents/testes_ops/fa.vhd EN work/fa 1688492758
+FL /home/sd/Documents/testes_ops/fourbitfa.vhd 2023/06/06.14:10:30 P.20131013
+EN work/fourbitfa 1688492760 FL /home/sd/Documents/testes_ops/fourbitfa.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/fourbitfa/Behavioral 1688492761 \
+      FL /home/sd/Documents/testes_ops/fourbitfa.vhd EN work/fourbitfa 1688492760 \
+      CP fa
+FL /home/sd/Documents/testes_ops/Selecao.vhd 2023/07/04.14:45:51 P.20131013
+EN work/Selecao 1688492762 FL /home/sd/Documents/testes_ops/Selecao.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/Selecao/Behavioral 1688492763 \
+      FL /home/sd/Documents/testes_ops/Selecao.vhd EN work/Selecao 1688492762 \
+      CP fourbitfa

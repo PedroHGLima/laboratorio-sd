@@ -1,0 +1,6 @@
+EN fa NULL /home/sd/Documents/testes_ops/fa.vhd sub00/vhpl00 1688492758
+AR selecao behavioral /home/sd/Documents/testes_ops/Selecao.vhd sub00/vhpl05 1688492763
+AR fa behavioral /home/sd/Documents/testes_ops/fa.vhd sub00/vhpl01 1688492759
+AR fourbitfa behavioral /home/sd/Documents/testes_ops/fourbitfa.vhd sub00/vhpl03 1688492761
+EN selecao NULL /home/sd/Documents/testes_ops/Selecao.vhd sub00/vhpl04 1688492762
+EN fourbitfa NULL /home/sd/Documents/testes_ops/fourbitfa.vhd sub00/vhpl02 1688492760

@@ -1,0 +1,3 @@
+vhdl work "fa.vhd"
+vhdl work "fourbitfa.vhd"
+vhdl work "Selecao.vhd"
