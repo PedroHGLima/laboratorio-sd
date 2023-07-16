@@ -59,16 +59,19 @@ signal Sub STD_LOGIC_VECTOR (3 downto 0);
 signal R STD_LOGIC_VECTOR (3 downto 0);
 
 begin
-    D <= X xor Y;
-    Sub <= X - Y;
-    signal D STD_LOGIC_VECTOR (3 downto 0);
+    process(A) is
+	begin
+    when Xq > Uq =>
+        S <= "0100"
+    when Xq = Uq =>
+        S <= "0010"
+    when Xq < Uq =>
+        S <= "0001"
+    end case;
 
-    A <= R;
-    B <= "0000";
-    ADD1: fourbitfa port map(A, B, cin, cout, S, F);
-    C_outq <= cout;
+    C_outq <= '0';
     Zq <= S;
-    Flagsq <= F;
+    Flagsq <= "0000";
 
 end Behavioral;
 

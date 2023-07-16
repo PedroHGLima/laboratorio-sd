@@ -42,28 +42,36 @@ end multiplica;
 architecture Behavioral of fourbitfa is
 
 
-Component fourbitfa is
-    Port ( X : in  STD_LOGIC_VECTOR (3 downto 0);
-           Y : in  STD_LOGIC_VECTOR (3 downto 0);
-           C_in : in  STD_LOGIC;
-           C_out : out  STD_LOGIC;
-           Z : out  STD_LOGIC_VECTOR (3 downto 0)
-		   Flags :out STD_LOGIC_VECTOR (3 downto 0)
-		   );
+Component fa is
+    Port ( A : in  STD_LOGIC;
+           B : in  STD_LOGIC;
+           Cin : in  STD_LOGIC;
+           Cout : out  STD_LOGIC;
+           Y : out  STD_LOGIC);
 end component;
-signal c1, c2, c3 : STD_LOGIC;
+
+
+signal Adder1_Cout, Adder2_Cout, Adder3_Cout : std_logic;
+--para entradas e saidas do component
+signal cin STD_LOGIC;
+signal S STD_LOGIC_VECTOR (3 downto 0); --resultado
+signal F STD_LOGIC_VECTOR (3 downto 0); --flags
 
 begin
 
---fa0: fa port map(x(0), a(0), C_in, c1, z(0));
---fa1: fa port map(x(1), a(1), c1, c2, z(1));
---fa2: fa port map(x(2), a(2), c2, c3, z(2));
---fa3: fa port map(x(3), a(3), c3, C_out, z(3));
+    Adder1: fa port map (Xm(0), Ym, '0', Adder1_Cout, S(0));
+    Adder2: fa port map (Xm(1), Ym, '0', Adder2_Cout, S(1));
+    Adder3: fa port map (Xm(2), Ym, '0', Adder3_Cout, S(2));
+    Adder4: fa port map (Xm(3), Ym, '0', '0', S(3));
 
-fa0: fa port map(x(0), y(0), C_in, c1, z(0));
-fa1: fa port map(x(1), y(1), c1, c2, z(1));
-fa2: fa port map(x(2), y(2), c2, c3, z(2));
-fa3: fa port map(x(3), y(3), c3, C_out, z(3));
+    Adder5: fa port map ('0', Ym, Adder1_Cout, Adder2_Cout, S(4));
+    Adder6: fa port map ('0', Ym, Adder2_Cout, Adder3_Cout, S(5));
+    Adder7: fa port map ('0', Ym, Adder3_Cout, '0', S(6));
+    Adder8: fa port map ('0', '0', '0', '0', S(7));
+    
+    C_outq <= cout;
+    Zq <= S;
+    Flagsq <= F;
 
 end Behavioral;
 
