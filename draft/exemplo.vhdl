@@ -69,6 +69,7 @@ begin
     -- o que mandar p component
     A <= R;
     B <= "0000";
+    cin <= '1';
     ADD1: fourbitfa port map(A, B, cin, cout, S, F);
 
     -- define as saidas da entidade

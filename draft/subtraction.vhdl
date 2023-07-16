@@ -52,19 +52,41 @@ Component fourbitfa is
 		   );
 end component;
 
-signal c1, c2, c3 : STD_LOGIC;
+Component compl is
+    Port ( Xcpl : in  STD_LOGIC_VECTOR (3 downto 0);
+           C_outcpl : out  STD_LOGIC;
+           Zcpl : out  STD_LOGIC_VECTOR (3 downto 0);
+           Flagscpl :out STD_LOGIC_VECTOR (3 downto 0)
+           );
+end component;
+
+--para entradas e saidas do component
+signal cin STD_LOGIC;
+signal S STD_LOGIC_VECTOR (3 downto 0); --resultado
+signal F STD_LOGIC_VECTOR (3 downto 0); --flags
+
+--para operacao
+signal D STD_LOGIC_VECTOR (3 downto 0);
+signal Sub STD_LOGIC_VECTOR (3 downto 0);
+signal R STD_LOGIC_VECTOR (3 downto 0); --resposta
+
+signal N STD_LOGIC_VECTOR (3 downto 0); --resposta
 
 begin
+    
+    COMT: compl port map(Ys, cout, N, F);
+    -- o que mandar p component
+    A <= Xs;
+    B <= N;
+    cin <= '1';
 
---fa0: fa port map(x(0), a(0), C_in, c1, z(0));
---fa1: fa port map(x(1), a(1), c1, c2, z(1));
---fa2: fa port map(x(2), a(2), c2, c3, z(2));
---fa3: fa port map(x(3), a(3), c3, C_out, z(3));
+    ADD1: fourbitfa port map(A, B, cin, cout, S, F);
+    if S(3) = '1' then
+        F(0) <= '1';
 
-fa0: fa port map(x(0), y(0), C_in, c1, z(0));
-fa1: fa port map(x(1), y(1), c1, c2, z(1));
-fa2: fa port map(x(2), y(2), c2, c3, z(2));
-fa3: fa port map(x(3), y(3), c3, C_out, z(3));
+    C_outq <= cout;
+    Zq <= S;
+    Flagsq <= F;
 
 end Behavioral;
 
