@@ -1,0 +1,97 @@
+# Reading pref.tcl
+# do projeto_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/subtraction.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:09:40 on Jul 16,2023
+# vcom -reportprogress 300 -93 -work work D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/subtraction.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity subtraction
+# -- Compiling architecture Behavioral of subtraction
+# End time: 20:09:41 on Jul 16,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fa.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:09:41 on Jul 16,2023
+# vcom -reportprogress 300 -93 -work work D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fa.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fa
+# -- Compiling architecture Behavioral of fa
+# End time: 20:09:41 on Jul 16,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:09:41 on Jul 16,2023
+# vcom -reportprogress 300 -93 -work work D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fourbitfa
+# -- Compiling architecture Behavioral of fourbitfa
+# End time: 20:09:41 on Jul 16,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:09:41 on Jul 16,2023
+# vcom -reportprogress 300 -93 -work work D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Selecao
+# -- Compiling architecture Behavioral of Selecao
+# End time: 20:09:41 on Jul 16,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:09:41 on Jul 16,2023
+# vcom -reportprogress 300 -93 -work work D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Selecao
+# -- Compiling architecture Behavioral of Selecao
+# End time: 20:09:41 on Jul 16,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  Selecao
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" Selecao 
+# Start time: 20:09:41 on Jul 16,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.selecao(behavioral)
+# Loading work.fourbitfa(behavioral)
+# Loading work.fa(behavioral)
+# Loading work.subtraction(behavioral)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+force -freeze sim:/selecao/Op 010 0
+run -all
+run
+force -freeze sim:/selecao/A 0010 0
+force -freeze sim:/selecao/B 0011 0
+run
+run
+run -continue
+run
+# End time: 20:15:59 on Jul 16,2023, Elapsed time: 0:06:18
+# Errors: 0, Warnings: 0

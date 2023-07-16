@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto
-Sat Jul 15 16:41:28 2023
+Sun Jul 16 20:08:47 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,10 +14,12 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "fourbitfa:fulla"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "subtraction:SUB|fourbitfa:fulla"
+ 10. Port Connectivity Checks: "subtraction:SUB"
+ 11. Port Connectivity Checks: "fourbitfa:ADD1"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 15 16:41:28 2023       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 16 20:08:47 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; projeto                                     ;
 ; Top-level Entity Name              ; Selecao                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4                                           ;
-;     Total combinational functions  ; 4                                           ;
+; Total logic elements               ; 3                                           ;
+;     Total combinational functions  ; 3                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 8                                           ;
+; Total pins                         ; 11                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -162,15 +164,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                            ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                     ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
-; fa.vhd                           ; yes             ; User VHDL File  ; D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fa.vhd        ;         ;
-; fourbitfa.vhd                    ; yes             ; User VHDL File  ; D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd ;         ;
-; Selecao.vhd                      ; yes             ; User VHDL File  ; D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd   ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+; subtraction.vhdl                 ; yes             ; User VHDL File  ; D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/subtraction.vhdl ;         ;
+; fa.vhd                           ; yes             ; User VHDL File  ; D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fa.vhd           ;         ;
+; fourbitfa.vhd                    ; yes             ; User VHDL File  ; D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd    ;         ;
+; Selecao.vhd                      ; yes             ; User VHDL File  ; D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd      ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -178,43 +181,40 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 4           ;
+; Estimated Total logic elements              ; 3           ;
 ;                                             ;             ;
-; Total combinational functions               ; 4           ;
+; Total combinational functions               ; 3           ;
 ; Logic element usage by number of LUT inputs ;             ;
 ;     -- 4 input functions                    ; 0           ;
 ;     -- 3 input functions                    ; 2           ;
-;     -- <=2 input functions                  ; 2           ;
+;     -- <=2 input functions                  ; 1           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 4           ;
+;     -- normal mode                          ; 3           ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
 ; Total registers                             ; 0           ;
 ;     -- Dedicated logic registers            ; 0           ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 8           ;
+; I/O pins                                    ; 11          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; Op[2]~input ;
-; Maximum fan-out                             ; 4           ;
-; Total fan-out                               ; 22          ;
-; Average fan-out                             ; 1.10        ;
+; Maximum fan-out node                        ; Op[0]~input ;
+; Maximum fan-out                             ; 3           ;
+; Total fan-out                               ; 24          ;
+; Average fan-out                             ; 0.96        ;
 +---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+-------------+--------------+
-; |Selecao                   ; 4 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |Selecao                        ; Selecao     ; work         ;
-;    |fourbitfa:fulla|       ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Selecao|fourbitfa:fulla        ; fourbitfa   ; work         ;
-;       |fa:fa2|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Selecao|fourbitfa:fulla|fa:fa2 ; fa          ; work         ;
-;       |fa:fa3|             ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Selecao|fourbitfa:fulla|fa:fa3 ; fa          ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |Selecao                   ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |Selecao            ; Selecao     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -233,14 +233,44 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "fourbitfa:fulla" ;
-+------+-------+----------+-------------------+
-; Port ; Type  ; Severity ; Details           ;
-+------+-------+----------+-------------------+
-; y[3] ; Input ; Info     ; Stuck at GND      ;
-; y[1] ; Input ; Info     ; Stuck at GND      ;
-+------+-------+----------+-------------------+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "subtraction:SUB|fourbitfa:fulla" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; c_in ; Input ; Info     ; Stuck at VCC                      ;
++------+-------+----------+-----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "subtraction:SUB"                                                                        ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; xs[3..2] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; xs[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ys[3]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ys[2]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; ys[1]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ys[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; c_outs   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fourbitfa:ADD1"                                                                        ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; x[3..2] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; x[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; y[3]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; y[2]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; y[1]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; y[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; c_in    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; c_out   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -248,16 +278,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 8                           ;
-; cycloneiii_lcell_comb ; 7                           ;
-;     normal            ; 7                           ;
+; boundary_port         ; 11                          ;
+; cycloneiii_lcell_comb ; 4                           ;
+;     normal            ; 4                           ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
+;         2 data inputs ; 1                           ;
 ;         3 data inputs ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.60                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.86                        ;
 +-----------------------+-----------------------------+
 
 
@@ -276,39 +305,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Jul 15 16:41:20 2023
+    Info: Processing started: Sun Jul 16 20:08:39 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto -c projeto
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file subtraction.vhdl
+    Info (12022): Found design unit 1: subtraction-Behavioral File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/subtraction.vhdl Line: 41
+    Info (12023): Found entity 1: subtraction File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/subtraction.vhdl Line: 32
 Info (12021): Found 2 design units, including 1 entities, in source file fa.vhd
     Info (12022): Found design unit 1: fa-Behavioral File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fa.vhd Line: 40
     Info (12023): Found entity 1: fa File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fa.vhd Line: 32
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitfa.vhd
-    Info (12022): Found design unit 1: fourbitfa-Behavioral File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd Line: 40
+    Info (12022): Found design unit 1: fourbitfa-Behavioral File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd Line: 41
     Info (12023): Found entity 1: fourbitfa File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd Line: 32
 Info (12021): Found 2 design units, including 1 entities, in source file selecao.vhd
-    Info (12022): Found design unit 1: Selecao-Behavioral File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 39
+    Info (12022): Found design unit 1: Selecao-Behavioral File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 44
     Info (12023): Found entity 1: Selecao File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 32
 Info (12127): Elaborating entity "Selecao" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at Selecao.vhd(59): used explicit default value for signal "A" because signal was never assigned a value File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 59
-Warning (10540): VHDL Signal Declaration warning at Selecao.vhd(60): used explicit default value for signal "B" because signal was never assigned a value File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at Selecao.vhd(71): signal "Op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 71
-Warning (10492): VHDL Process Statement warning at Selecao.vhd(75): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 75
-Warning (10492): VHDL Process Statement warning at Selecao.vhd(89): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 89
-Info (12128): Elaborating entity "fourbitfa" for hierarchy "fourbitfa:fulla" File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 140
-Info (12128): Elaborating entity "fa" for hierarchy "fourbitfa:fulla|fa:fa0" File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd Line: 60
+Warning (10540): VHDL Signal Declaration warning at Selecao.vhd(126): used explicit default value for signal "A" because signal was never assigned a value File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 126
+Warning (10540): VHDL Signal Declaration warning at Selecao.vhd(127): used explicit default value for signal "B" because signal was never assigned a value File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 127
+Warning (10036): Verilog HDL or VHDL warning at Selecao.vhd(129): object "add_cout" assigned a value but never read File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 129
+Warning (10036): Verilog HDL or VHDL warning at Selecao.vhd(129): object "sub_cout" assigned a value but never read File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at Selecao.vhd(165): signal "add_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 165
+Warning (10492): VHDL Process Statement warning at Selecao.vhd(166): signal "add_flags" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at Selecao.vhd(175): signal "sub_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 175
+Warning (10492): VHDL Process Statement warning at Selecao.vhd(176): signal "sub_flags" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 176
+Info (12128): Elaborating entity "fourbitfa" for hierarchy "fourbitfa:ADD1" File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 135
+Info (12128): Elaborating entity "fa" for hierarchy "fourbitfa:ADD1|fa:fa0" File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd Line: 59
+Info (12128): Elaborating entity "subtraction" for hierarchy "subtraction:SUB" File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 141
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Zop[1]" is stuck at GND File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 34
+    Warning (13410): Pin "Zop[3]" is stuck at GND File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 37
+    Warning (13410): Pin "Flg[2]" is stuck at GND File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 38
+    Warning (13410): Pin "Flg[3]" is stuck at GND File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 38
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 14 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4797 megabytes
-    Info: Processing ended: Sat Jul 15 16:41:28 2023
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 3 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4810 megabytes
+    Info: Processing ended: Sun Jul 16 20:08:47 2023
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:08
 

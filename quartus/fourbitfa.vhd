@@ -34,7 +34,8 @@ entity fourbitfa is
            Y : in  STD_LOGIC_VECTOR (3 downto 0);
            C_in : in  STD_LOGIC;
            C_out : out  STD_LOGIC;
-           Z : out  STD_LOGIC_VECTOR (3 downto 0));
+           Z : out  STD_LOGIC_VECTOR (3 downto 0);
+			  Flags : out STD_LOGIC_VECTOR (3 downto 0));
 end fourbitfa;
 
 architecture Behavioral of fourbitfa is
@@ -48,19 +49,27 @@ Component fa is
            Y : out  STD_LOGIC);
 end component;
 
-signal c1, c2, c3 : STD_LOGIC;
+signal c1, c2, c3, c4 : STD_LOGIC;
+signal s : STD_LOGIC_VECTOR (3 downto 0);
 
 begin
 
---fa0: fa port map(x(0), a(0), C_in, c1, z(0));
---fa1: fa port map(x(1), a(1), c1, c2, z(1));
---fa2: fa port map(x(2), a(2), c2, c3, z(2));
---fa3: fa port map(x(3), a(3), c3, C_out, z(3));
+-- Flags sao (Zero, negativo, carry out, overflow)
 
-fa0: fa port map(x(0), y(0), C_in, c1, z(0));
-fa1: fa port map(x(1), y(1), c1, c2, z(1));
-fa2: fa port map(x(2), y(2), c2, c3, z(2));
-fa3: fa port map(x(3), y(3), c3, C_out, z(3));
+fa0: fa port map(x(0), y(0), C_in, c1, s(0));
+fa1: fa port map(x(1), y(1), c1, c2, s(1));
+fa2: fa port map(x(2), y(2), c2, c3, s(2));
+fa3: fa port map(x(3), y(3), c3, c4, s(3));
+
+Z <= s;
+C_out <= c4;
+
+Flags(3) <= '1' when S = "0000" else '0'; 		-- zero
+Flags(2) <= not c4 and C_in;							-- negativo
+Flags(1) <= c4;
+Flags(0) <= c4 and (not C_in); 						-- overflow
+
+
 
 end Behavioral;
 
