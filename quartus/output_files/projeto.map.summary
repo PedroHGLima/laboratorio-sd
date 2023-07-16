@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sat Jul 15 16:41:28 2023
+Analysis & Synthesis Status : Successful - Sun Jul 16 12:52:12 2023
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : projeto
 Top-level Entity Name : Selecao
 Family : Cyclone IV E
-Total logic elements : 4
-    Total combinational functions : 4
+Total logic elements : 5
+    Total combinational functions : 5
     Dedicated logic registers : 0
 Total registers : 0
 Total pins : 8

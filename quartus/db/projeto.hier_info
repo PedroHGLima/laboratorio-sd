@@ -3,26 +3,34 @@ Op[0] => Mux0.IN10
 Op[0] => Mux1.IN10
 Op[0] => Mux2.IN10
 Op[0] => Mux3.IN10
-Op[0] => Mux4.IN5
-Op[0] => Mux5.IN5
+Op[0] => Mux4.IN10
+Op[0] => Mux5.IN10
 Op[0] => Mux6.IN10
+Op[0] => Mux7.IN10
+Op[0] => Mux8.IN10
 Op[1] => Mux0.IN9
 Op[1] => Mux1.IN9
 Op[1] => Mux2.IN9
 Op[1] => Mux3.IN9
+Op[1] => Mux4.IN9
+Op[1] => Mux5.IN9
 Op[1] => Mux6.IN9
+Op[1] => Mux7.IN9
+Op[1] => Mux8.IN9
 Op[2] => Mux0.IN8
 Op[2] => Mux1.IN8
 Op[2] => Mux2.IN8
 Op[2] => Mux3.IN8
-Op[2] => Mux4.IN4
-Op[2] => Mux5.IN4
+Op[2] => Mux4.IN8
+Op[2] => Mux5.IN8
 Op[2] => Mux6.IN8
-Zop[0] << fourbitfa:fulla.Z[0]
-Zop[1] << fourbitfa:fulla.Z[1]
-Zop[2] << fourbitfa:fulla.Z[2]
-Zop[3] << fourbitfa:fulla.Z[3]
-Ov << fourbitfa:fulla.C_out
+Op[2] => Mux7.IN8
+Op[2] => Mux8.IN8
+Zop[0] <= fourbitfa:fulla.Z[0]
+Zop[1] <= fourbitfa:fulla.Z[1]
+Zop[2] <= fourbitfa:fulla.Z[2]
+Zop[3] <= fourbitfa:fulla.Z[3]
+Ov <= fourbitfa:fulla.C_out
 
 
 |Selecao|fourbitfa:fulla

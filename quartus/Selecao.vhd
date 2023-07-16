@@ -64,10 +64,8 @@ signal S : STD_LOGIC_VECTOR (3 downto 0);
 signal N : STD_LOGIC;
 
 begin
-	process(A) is
+	process(op) is
 	begin
-	--S <= "0000";
-	--Zop <= S;
 	case op is
 	when "000" => 
 		--soma
@@ -81,12 +79,12 @@ begin
 		X <= not A;
 		Y <= "0000";
 		C <= '1';
-		--1011
+		--0100
 		
 	when "010" =>
 		--subtração
-		X <= not A;
-		Y <= B;
+		X <= A;
+		Y <= not B;
 		C <= '1';
 		--0111
 		
@@ -95,6 +93,7 @@ begin
 		X <= A;
 		Y <= "0000";
 		C <= '1';
+		--1101
 		
 	----------------------
 	
@@ -115,12 +114,12 @@ begin
 		--X(1) <= A(0-B(0));
 		--X(0) <= '0';
 		--N <= Y;
-		X(3) <= A(2);
-		X(2) <= A(1);
-		X(1) <= A(0);
-		X(0) <= '0';
-		Y <= "0000";
-		C <= '0';
+--		X(3) <= A(2);
+--		X(2) <= A(1);
+--		X(1) <= A(0);
+--		X(0) <= '0';
+--		Y <= "0000";
+--		C <= '0';
 		
 	--when "110" =>
 		--mod

@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "Zop[1]",
+					"strict" : false
+				},
+				{
 					"name" : "Zop[2]",
 					"strict" : false
 				},
@@ -20,11 +24,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "Op[0]",
+					"name" : "Op[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Op[2]",
+					"name" : "Op[0]",
 					"strict" : false
 				},
 				{

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto
-Sat Jul 15 16:41:28 2023
+Sun Jul 16 12:52:12 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,10 +14,9 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "fourbitfa:fulla"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -44,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 15 16:41:28 2023       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 16 12:52:12 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; projeto                                     ;
 ; Top-level Entity Name              ; Selecao                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4                                           ;
-;     Total combinational functions  ; 4                                           ;
+; Total logic elements               ; 5                                           ;
+;     Total combinational functions  ; 5                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 8                                           ;
@@ -178,16 +177,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 4           ;
+; Estimated Total logic elements              ; 5           ;
 ;                                             ;             ;
-; Total combinational functions               ; 4           ;
+; Total combinational functions               ; 5           ;
 ; Logic element usage by number of LUT inputs ;             ;
 ;     -- 4 input functions                    ; 0           ;
-;     -- 3 input functions                    ; 2           ;
-;     -- <=2 input functions                  ; 2           ;
+;     -- 3 input functions                    ; 4           ;
+;     -- <=2 input functions                  ; 1           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 4           ;
+;     -- normal mode                          ; 5           ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
 ; Total registers                             ; 0           ;
@@ -199,9 +198,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; Op[2]~input ;
-; Maximum fan-out                             ; 4           ;
-; Total fan-out                               ; 22          ;
-; Average fan-out                             ; 1.10        ;
+; Maximum fan-out                             ; 5           ;
+; Total fan-out                               ; 27          ;
+; Average fan-out                             ; 1.29        ;
 +---------------------------------------------+-------------+
 
 
@@ -210,10 +209,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+-------------+--------------+
-; |Selecao                   ; 4 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |Selecao                        ; Selecao     ; work         ;
-;    |fourbitfa:fulla|       ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Selecao|fourbitfa:fulla        ; fourbitfa   ; work         ;
+; |Selecao                   ; 5 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |Selecao                        ; Selecao     ; work         ;
+;    |fourbitfa:fulla|       ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Selecao|fourbitfa:fulla        ; fourbitfa   ; work         ;
 ;       |fa:fa2|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Selecao|fourbitfa:fulla|fa:fa2 ; fa          ; work         ;
-;       |fa:fa3|             ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Selecao|fourbitfa:fulla|fa:fa3 ; fa          ; work         ;
+;       |fa:fa3|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Selecao|fourbitfa:fulla|fa:fa3 ; fa          ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -233,31 +232,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "fourbitfa:fulla" ;
-+------+-------+----------+-------------------+
-; Port ; Type  ; Severity ; Details           ;
-+------+-------+----------+-------------------+
-; y[3] ; Input ; Info     ; Stuck at GND      ;
-; y[1] ; Input ; Info     ; Stuck at GND      ;
-+------+-------+----------+-------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 8                           ;
-; cycloneiii_lcell_comb ; 7                           ;
-;     normal            ; 7                           ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 2                           ;
+; cycloneiii_lcell_comb ; 8                           ;
+;     normal            ; 8                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 4                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.60                        ;
+; Average LUT depth     ; 1.82                        ;
 +-----------------------+-----------------------------+
 
 
@@ -276,7 +264,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Jul 15 16:41:20 2023
+    Info: Processing started: Sun Jul 16 12:52:04 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto -c projeto
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -292,24 +280,25 @@ Info (12021): Found 2 design units, including 1 entities, in source file selecao
 Info (12127): Elaborating entity "Selecao" for the top level hierarchy
 Warning (10540): VHDL Signal Declaration warning at Selecao.vhd(59): used explicit default value for signal "A" because signal was never assigned a value File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 59
 Warning (10540): VHDL Signal Declaration warning at Selecao.vhd(60): used explicit default value for signal "B" because signal was never assigned a value File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at Selecao.vhd(71): signal "Op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 71
-Warning (10492): VHDL Process Statement warning at Selecao.vhd(75): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 75
-Warning (10492): VHDL Process Statement warning at Selecao.vhd(89): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 89
-Info (12128): Elaborating entity "fourbitfa" for hierarchy "fourbitfa:fulla" File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 140
+Warning (10492): VHDL Process Statement warning at Selecao.vhd(72): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at Selecao.vhd(73): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at Selecao.vhd(79): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at Selecao.vhd(86): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at Selecao.vhd(87): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at Selecao.vhd(93): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 93
+Info (12128): Elaborating entity "fourbitfa" for hierarchy "fourbitfa:fulla" File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 139
 Info (12128): Elaborating entity "fa" for hierarchy "fourbitfa:fulla|fa:fa0" File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd Line: 60
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Zop[1]" is stuck at GND File: D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd Line: 34
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 13 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4797 megabytes
-    Info: Processing ended: Sat Jul 15 16:41:28 2023
+    Info (21061): Implemented 5 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4800 megabytes
+    Info: Processing ended: Sun Jul 16 12:52:12 2023
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Total CPU time (on all processors): 00:00:09
 
 

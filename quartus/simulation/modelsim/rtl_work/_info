@@ -1,0 +1,134 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/simulation/modelsim
+Efa
+Z1 w1689197084
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z4 8D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fa.vhd
+Z5 FD:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fa.vhd
+l0
+Z6 L32 1
+V8T;Al>0^XJ=AFDd_e6Wf@2
+!s100 >?3bS5DKzdd<]nA3Xf;h]0
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1689524404
+!i10b 1
+Z9 !s108 1689524404.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fa.vhd|
+Z11 !s107 D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fa.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+DEx4 work 2 fa 0 22 8T;Al>0^XJ=AFDd_e6Wf@2
+!i122 0
+l42
+L40 7
+V_>Md<<57SzP<T03acjm>43
+!s100 @6TK=B;D^abc6B5IW;T=o2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Efourbitfa
+Z14 w1689197113
+R2
+R3
+!i122 1
+R0
+Z15 8D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd
+Z16 FD:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd
+l0
+R6
+V@_47i4=Ya9J04i]gc>QQG2
+!s100 N@H?8;;]JkcAo[gi5kQBO2
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd|
+Z18 !s107 D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/fourbitfa.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+DEx4 work 9 fourbitfa 0 22 @_47i4=Ya9J04i]gc>QQG2
+!i122 1
+l53
+L40 26
+VJZM8NaO5jA;5EOMRaS2DZ0
+!s100 [M]ZBUAO;^74JXCTG2KaN0
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Eselecao
+Z19 w1689459322
+R2
+R3
+!i122 3
+R0
+Z20 8D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd
+Z21 FD:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd
+l0
+R6
+Vc1U=[f20UmfOen`8NL_9>1
+!s100 _dZ5mmIn2=^[zgcA8bk7g2
+R7
+31
+Z22 !s110 1689524405
+!i10b 1
+R9
+Z23 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd|
+Z24 !s107 D:/OneDrive/Office/Estudos/Sistema Digitais/laboratorio-sd/quartus/Selecao.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+Z25 DEx4 work 7 selecao 0 22 c1U=[f20UmfOen`8NL_9>1
+!i122 3
+l66
+Z26 L39 104
+Z27 VFoVzQk5[<Vz7ZH89^En=92
+Z28 !s100 Jc8`KJ`mlkh<zb6S]RXK70
+R7
+31
+R22
+!i10b 1
+R9
+R23
+R24
+!i113 1
+R12
+R13
