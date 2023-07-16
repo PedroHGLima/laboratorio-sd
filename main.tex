@@ -6,6 +6,19 @@
 \usepackage{indentfirst}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
+\documentclass{book}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
 
 \begin{document}
 %\maketitle
@@ -24,9 +37,9 @@
         
         \vspace{85pt}
         
-		\textbf{\LARGE{Template}}
-		\large{Modelo\\
-        		Validação do modelo clássico}
+		\textbf{\LARGE{Relatório de Laboratório}}
+		\large{\\
+        		Desenvolvimento de uma ULA}
 		\vspace{160pt}
 		
 	\end{center}
@@ -34,9 +47,10 @@
 	\begin{flushleft}
 		\begin{tabbing}
 			Alunos\qquad\qquad\= Pedro Henrique Grave Lima\\
-			\>aaa\\
-            \> bbb\\
-            \> ccc \\
+			\>Marina Sangineto Jucá\\
+            \> Arthur Trucco\\
+            \> Rodrigo Leal \\
+            \> Luiz Felipe Cantanhede Cristino \\
 			Professor\> Roberto Gonçalves Pacheco \\
 			Horário\> Ter - 13:00-15:00\\
 		
@@ -59,58 +73,216 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Objetivo}
+\section{Introdução}
 
-O objetivo deste experimento é a realização 
-\section{Equipamentos Utilizados}
+Este documento tem como objetivo relatar o desenvolvimento do trabalho proposto. O trabalho constitui a construção de uma Unidade Lógica Aritmética (ULA) de quatro bits que seja capaz de realizar oito operações distintas. Dentre essas operações, quatro são obrigatórias, sendo elas as operações de soma, subtração em complemento de 2, incremento de +1 e troca sinal. Entre as não obrigatórias, optamos por realizar as operações de multiplicação, mod, potência de 2 e comparador.
+\section{Desenvolvimento}
 
-Para o experimento em questão foram utilizados dois geradores síncronos em que um atuava como motor para configurar um conjunto motor síncrono-gerador síncrono. A função do motor síncrono é a de fornecer potência mecânica ao eixo do gerador para que, então, seja possível realizar os ensaios no gerador síncrono. As placas de dados do motor e do gerador síncrono estão ilustrados nas Figuras 
+Para a realização deste trabalho foi-se desenvolvido e testado um código em linguagem de descrição de hardware (VHDL) no laboratório da disciplina, onde foram produzidos os resultados bases em uma placa FPGA. A partir desses resultados, o projeto continuou a ser desenvolvido de maneira remota através do uso de softwares e ferramentas de produção, como o Quartus Prime Lite, GitHub e Overleaf. 
 
-\section{Procedimento Experimental}
+\section{Operações Obrigatórias}
 
-Descrição procedimento
 
-\subsection{subseção1}
+\subsection{Soma}
 
-tabela exemplo
+\begin{figure}[h]
+\caption{Soma}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\subsection{Subtração em Complemento de 2}
+
+\begin{figure}[h]
+\caption{Soma}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\subsection{Incremento de +1}
+
+\begin{figure}[h]
+\caption{Soma}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\subsection{Troca de Sinal}
+
+\begin{figure}[h]
+\caption{Soma}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+
+\section{Operações Livres}
+
+\subsection{Multiplicação}
+
+\begin{figure}[h]
+\caption{Soma}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\subsection{Mod (Resto)}
+
+\begin{figure}[h]
+\caption{Soma}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\subsection{Potência de 2}
+
+\begin{figure}[h]
+\caption{Soma}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\subsection{Comparador}
+
+\begin{figure}[h]
+\caption{Soma}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\section{Troca de Operações e Entradas}
+A fim de permitir que as operações sejam alterados para a execução de todas as funcionalidades presentes na ULA, foi proposto o desenvolvimento e aplicação do seguinte bloco de código:
+
+\begin{figure}[h]
+\caption{Exemplo}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+Onde temos a seguinte tabela para definir o código de cada operação:
 
 \begin{table}[htb]
 \centering
 \begin{tabular}{c|c}
-$I_{exc}$ [A] & $V_{a}$ [V] \\ \hline
-0.188	& 2.63 		\\\hline
-0.88 & 20.55	\\\hline
-1.83 & 39.26 \\\hline
-2.66 & 55.19 \\\hline
-3.78 & 74.94 \\\hline
-5.00 & 93.70 \\\hline
-6.28 & 109.87 \\\hline
-7.55 & 122.28 \\\hline
-10.05 & 139.03 \\\hline
-11.98 & 148.55 \\\hline
-13.30 & 153.92 
+Código & Operação \\ \hline
+111	& Soma 		\\\hline
+111 & Subtração	\\\hline
+111 & Incremento \\\hline
+111 & Sinal \\\hline
+111 & Multiplicação \\\hline
+111 & Mod \\\hline
+111 & Potência 2 \\\hline
+111 & Comparador
 \end{tabular}
 \caption{Pontos coletados para o ensaio à vazio;}
 \label{vazio}
 \end{table}
 
+Dessa forma, temos a seção XXXXX responsável por alterar as operações contanto que se altere as entradas XXXXX.
 
+Já para a inserção de diferentes entradas e produção de diferentes resultados, o que temos é a seguinte proposta:
 
-\section{Análise dos Resultados}
+\begin{figure}[h]
+\caption{Exemplo}
 
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
 
-aálise dados
+Basta que se altere os valores XXXXXX e YYYYYY.
+
+\section{Resultados e Flags}
+
+Com as operações construídas na ULA é possível, ao menos, produzir os seguintes resultados de exemplo para cada operação:
+
+\begin{figure}[h]
+\caption{Soma}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Subtração em Complemento de 2}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Incremento de +1}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Troca de Sinal}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Multiplicação}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Mod}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Potência de 2}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Comparador}
+
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+É válido notar que no resultado de cada operação também está presente os valores de todas as flags requisitados para plena compreensão do resultado: Zero, negativo, carry out e overflow.
+
 \section{Conclusão}
 
-conclusao
+Portanto, apesar das dificuldades enfrentadas na implementação das funções na placa, é possível concluir que a construção teórica desenvolvida ao longo dos laboratórios fundamentou um código o qual é capaz de simular perfeitamente uma ULA. Os resultados obtidos foram os esperados e, por fim, é possível destacar que o objetivo do trabalho prático foi alcançado.
 
-
-
-\newpage
-\section{Referências}
-
-[1] Chapman, S.J. -- Electric Machinery Fundamentals, 4th Edition;
-
-[2] Fitzgerald, A. E. -- Máquinas Elétricas, 2da Edição;
 
 \end{document}
