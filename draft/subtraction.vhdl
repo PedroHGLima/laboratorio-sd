@@ -74,7 +74,7 @@ signal N STD_LOGIC_VECTOR (3 downto 0); --resposta
 
 begin
     
-    COMT: compl port map(Ys, cout, N, F);
+    COMT: compl port map(Ys, cout, N, D);
     -- o que mandar p component
     A <= Xs;
     B <= N;
@@ -84,9 +84,9 @@ begin
     if S(3) = '1' then
         F(0) <= '1';
 
-    C_outq <= cout;
-    Zq <= S;
-    Flagsq <= F;
+    C_outs <= cout;
+    Zs <= S;
+    Flagss <= F;
 
 end Behavioral;
 

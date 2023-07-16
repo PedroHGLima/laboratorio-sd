@@ -32,6 +32,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity exemplo is
     Port ( Xe : in  STD_LOGIC_VECTOR (3 downto 0);
            Ye : in  STD_LOGIC_VECTOR (3 downto 0);
+           C_ine : in  STD_LOGIC;
+           C_oute : out  STD_LOGIC;
            Ze : out  STD_LOGIC_VECTOR (3 downto 0);
            Flagse : out STD_LOGIC_VECTOR (3 downto 0)
            );
@@ -54,6 +56,7 @@ end component;
 signal cin STD_LOGIC;
 signal S STD_LOGIC_VECTOR (3 downto 0); --resultado
 signal F STD_LOGIC_VECTOR (3 downto 0); --flags
+signal cout STD_LOGIC; 
 
 --para operacao
 signal D STD_LOGIC_VECTOR (3 downto 0);
@@ -73,9 +76,10 @@ begin
     ADD1: fourbitfa port map(A, B, cin, cout, S, F);
 
     -- define as saidas da entidade
-    C_outq <= cout;
-    Zq <= S;
-    Flagsq <= F;
+    C_oute <= cout;
+    Ze <= S;
+    Flagse <= F;
+
 
 end Behavioral;
 

@@ -69,9 +69,9 @@ begin
     if S(3) = '1' then
         F(0) <= '1';
     -- define as saidas da entidade
-    C_outq <= cout;
-    Zq <= S;
-    Flagsq <= F;
+    C_outcpl <= cout;
+    Zcpl <= S;
+    Flagscpl <= F;
 
 end Behavioral;
 

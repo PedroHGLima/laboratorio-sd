@@ -32,7 +32,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity multiplica is
     Port ( Xm : in  STD_LOGIC_VECTOR (3 downto 0);
            Ym : in  STD_LOGIC_VECTOR (3 downto 0);
-           C_inm : in  STD_LOGIC;
            C_outm : out  STD_LOGIC;
            Zm : out  STD_LOGIC_VECTOR (3 downto 0)
 		   Flagsm :out STD_LOGIC_VECTOR (3 downto 0)
@@ -69,9 +68,9 @@ begin
     Adder7: fa port map ('0', Ym, Adder3_Cout, '0', S(6));
     Adder8: fa port map ('0', '0', '0', '0', S(7));
     
-    C_outq <= cout;
-    Zq <= S;
-    Flagsq <= F;
+    C_outm <= cout;
+    Zm <= S;
+    Flagsm <= F;
 
 end Behavioral;
 

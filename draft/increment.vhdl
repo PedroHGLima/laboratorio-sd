@@ -68,9 +68,9 @@ begin
     ADD1: fourbitfa port map(A, B, cin, cout, S, F);
 
     -- define as saidas da entidade
-    C_outq <= cout;
-    Zq <= S;
-    Flagsq <= F;
+    C_outi <= cout;
+    Zi <= S;
+    Flagsi <= F;
 
 end Behavioral;
 

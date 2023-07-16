@@ -78,6 +78,8 @@ Component compl is
            Zcpl : out  STD_LOGIC_VECTOR (3 downto 0)
 		   Flagscpl :out STD_LOGIC_VECTOR (3 downto 0)
 		   );
+end component;
+		   
 
 Component troca is
     Port ( Xt : in  STD_LOGIC_VECTOR (3 downto 0);
@@ -85,6 +87,7 @@ Component troca is
            Zt : out  STD_LOGIC_VECTOR (3 downto 0)
 		   Flagst :out STD_LOGIC_VECTOR (3 downto 0)
 		   );
+end component;
 
 
 Component comparador is
@@ -93,6 +96,8 @@ Component comparador is
            Zq : out  STD_LOGIC_VECTOR (3 downto 0)
 		   Flagsq :out STD_LOGIC_VECTOR (3 downto 0)
 		   );
+end component;
+
 
 Component mod is
     Port ( Xmd : in  STD_LOGIC_VECTOR (3 downto 0);
@@ -102,15 +107,18 @@ Component mod is
            Zmd : out  STD_LOGIC_VECTOR (3 downto 0)
 		   Flagsmd :out STD_LOGIC_VECTOR (3 downto 0)
 		   );
+end component;
+
 
 Component multiplica is
     Port ( Xm : in  STD_LOGIC_VECTOR (3 downto 0);
            Ym : in  STD_LOGIC_VECTOR (3 downto 0);
-           C_inm : in  STD_LOGIC;
            C_outm : out  STD_LOGIC;
            Zm : out  STD_LOGIC_VECTOR (3 downto 0)
 		   Flagsm :out STD_LOGIC_VECTOR (3 downto 0)
 		   );
+end component;
+
 
 Component potencia is
     Port ( Xp : in  STD_LOGIC_VECTOR (3 downto 0);
@@ -120,6 +128,8 @@ Component potencia is
            Zp : out  STD_LOGIC_VECTOR (3 downto 0)
 		   Flagsp :out STD_LOGIC_VECTOR (3 downto 0)
 		   );
+end component;
+
 
 
 signal A : STD_LOGIC_VECTOR (3 downto 0) := "1100";
