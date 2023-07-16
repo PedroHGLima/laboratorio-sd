@@ -16,19 +16,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "Zop[3]",
+					"name" : "Flg[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Ov",
-					"strict" : false
-				},
-				{
-					"name" : "Op[2]",
+					"name" : "Flg[1]",
 					"strict" : false
 				},
 				{
 					"name" : "Op[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Op[2]",
 					"strict" : false
 				},
 				{
