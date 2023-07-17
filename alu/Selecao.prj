@@ -1,0 +1,7 @@
+vhdl work "fa.vhd"
+vhdl work "fourbitfa.vhd"
+vhdl work "subtraction.vhd"
+vhdl work "increment.vhd"
+vhdl work "compl.vhd"
+vhdl work "comparador.vhd"
+vhdl work "Selecao.vhd"

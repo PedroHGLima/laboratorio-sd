@@ -1,0 +1,423 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
+ 
+--> 
+Reading design: Selecao.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Selecao.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Selecao"
+Output Format                      : NGC
+Target Device                      : xc3s700an-5-fgg484
+
+---- Source Options
+Top Module Name                    : Selecao
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/Selecao is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/Selecao.vhd", and is now defined in "/home/ise/xixilinx/alu/Selecao.vhd".
+WARNING:HDLParsers:3607 - Unit work/Selecao/Behavioral is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/Selecao.vhd", and is now defined in "/home/ise/xixilinx/alu/Selecao.vhd".
+WARNING:HDLParsers:3607 - Unit work/comparador is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/comparador.vhd", and is now defined in "/home/ise/xixilinx/alu/comparador.vhd".
+WARNING:HDLParsers:3607 - Unit work/comparador/Behavioral is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/comparador.vhd", and is now defined in "/home/ise/xixilinx/alu/comparador.vhd".
+WARNING:HDLParsers:3607 - Unit work/compl is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/compl.vhd", and is now defined in "/home/ise/xixilinx/alu/compl.vhd".
+WARNING:HDLParsers:3607 - Unit work/compl/Behavioral is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/compl.vhd", and is now defined in "/home/ise/xixilinx/alu/compl.vhd".
+WARNING:HDLParsers:3607 - Unit work/increment is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/increment.vhd", and is now defined in "/home/ise/xixilinx/alu/increment.vhd".
+WARNING:HDLParsers:3607 - Unit work/increment/Behavioral is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/increment.vhd", and is now defined in "/home/ise/xixilinx/alu/increment.vhd".
+WARNING:HDLParsers:3607 - Unit work/subtraction is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/subtraction.vhd", and is now defined in "/home/ise/xixilinx/alu/subtraction.vhd".
+WARNING:HDLParsers:3607 - Unit work/subtraction/Behavioral is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/subtraction.vhd", and is now defined in "/home/ise/xixilinx/alu/subtraction.vhd".
+WARNING:HDLParsers:3607 - Unit work/fourbitfa is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/fourbitfa.vhd", and is now defined in "/home/ise/xixilinx/alu/fourbitfa.vhd".
+WARNING:HDLParsers:3607 - Unit work/fourbitfa/Behavioral is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/fourbitfa.vhd", and is now defined in "/home/ise/xixilinx/alu/fourbitfa.vhd".
+WARNING:HDLParsers:3607 - Unit work/fa is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/fa.vhd", and is now defined in "/home/ise/xixilinx/alu/fa.vhd".
+WARNING:HDLParsers:3607 - Unit work/fa/Behavioral is now defined in a different file.  It was defined in "/home/ise/xixilinx/testes_ops_4/fa.vhd", and is now defined in "/home/ise/xixilinx/alu/fa.vhd".
+Compiling vhdl file "/home/ise/xixilinx/alu/fa.vhd" in Library work.
+Architecture behavioral of Entity fa is up to date.
+Compiling vhdl file "/home/ise/xixilinx/alu/fourbitfa.vhd" in Library work.
+Architecture behavioral of Entity fourbitfa is up to date.
+Compiling vhdl file "/home/ise/xixilinx/alu/compl.vhd" in Library work.
+Architecture behavioral of Entity compl is up to date.
+Compiling vhdl file "/home/ise/xixilinx/alu/subtraction.vhd" in Library work.
+Architecture behavioral of Entity subtraction is up to date.
+Compiling vhdl file "/home/ise/xixilinx/alu/increment.vhd" in Library work.
+Architecture behavioral of Entity increment is up to date.
+Compiling vhdl file "/home/ise/xixilinx/alu/comparador.vhd" in Library work.
+Entity <comparador> compiled.
+Entity <comparador> (Architecture <behavioral>) compiled.
+Compiling vhdl file "/home/ise/xixilinx/alu/Selecao.vhd" in Library work.
+Entity <selecao> compiled.
+Entity <selecao> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Selecao> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <fourbitfa> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <compl> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <subtraction> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <increment> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <comparador> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <fa> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <fourbitfa> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <fa> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <fa> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <fa> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <fa> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <Selecao> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "/home/ise/xixilinx/alu/Selecao.vhd" line 151: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <add_out>, <add_flags>, <comp_out>, <comp_flags>, <sub_out>, <sub_flags>, <inc_out>, <inc_flags>, <qual_out>
+Entity <Selecao> analyzed. Unit <Selecao> generated.
+
+Analyzing Entity <fourbitfa> in library <work> (Architecture <behavioral>).
+Entity <fourbitfa> analyzed. Unit <fourbitfa> generated.
+
+Analyzing Entity <fa> in library <work> (Architecture <behavioral>).
+Entity <fa> analyzed. Unit <fa> generated.
+
+Analyzing Entity <compl> in library <work> (Architecture <behavioral>).
+Entity <compl> analyzed. Unit <compl> generated.
+
+Analyzing Entity <subtraction> in library <work> (Architecture <behavioral>).
+Entity <subtraction> analyzed. Unit <subtraction> generated.
+
+Analyzing Entity <increment> in library <work> (Architecture <behavioral>).
+Entity <increment> analyzed. Unit <increment> generated.
+
+Analyzing Entity <comparador> in library <work> (Architecture <behavioral>).
+Entity <comparador> analyzed. Unit <comparador> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <comparador>.
+    Related source file is "/home/ise/xixilinx/alu/comparador.vhd".
+WARNING:Xst:1305 - Output <Zq<3>> is never assigned. Tied to value 0.
+    Found 4-bit comparator equal for signal <Equal$cmp_eq0000> created at line 50.
+    Found 4-bit comparator greater for signal <Greater$cmp_gt0000> created at line 47.
+    Summary:
+	inferred   2 Comparator(s).
+Unit <comparador> synthesized.
+
+
+Synthesizing Unit <fa>.
+    Related source file is "/home/ise/xixilinx/alu/fa.vhd".
+    Found 1-bit xor2 for signal <Y>.
+    Found 1-bit xor2 for signal <Cout$xor0000> created at line 44.
+Unit <fa> synthesized.
+
+
+Synthesizing Unit <fourbitfa>.
+    Related source file is "/home/ise/xixilinx/alu/fourbitfa.vhd".
+Unit <fourbitfa> synthesized.
+
+
+Synthesizing Unit <compl>.
+    Related source file is "/home/ise/xixilinx/alu/compl.vhd".
+Unit <compl> synthesized.
+
+
+Synthesizing Unit <subtraction>.
+    Related source file is "/home/ise/xixilinx/alu/subtraction.vhd".
+Unit <subtraction> synthesized.
+
+
+Synthesizing Unit <increment>.
+    Related source file is "/home/ise/xixilinx/alu/increment.vhd".
+Unit <increment> synthesized.
+
+
+Synthesizing Unit <Selecao>.
+    Related source file is "/home/ise/xixilinx/alu/Selecao.vhd".
+WARNING:Xst:647 - Input <C_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <sub_cout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <state> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <qual_flags> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <inc_cout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <comp_cout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <add_cout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <add_cin> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <B> is used but never assigned. This sourceless signal will be automatically connected to value 0101.
+WARNING:Xst:653 - Signal <A> is used but never assigned. This sourceless signal will be automatically connected to value 1100.
+Unit <Selecao> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Comparators                                          : 2
+ 4-bit comparator equal                                : 1
+ 4-bit comparator greater                              : 1
+# Xors                                                 : 32
+ 1-bit xor2                                            : 32
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <ADD1> is unconnected in block <Selecao>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <COMT> is unconnected in block <Selecao>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <SUB> is unconnected in block <Selecao>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <INC> is unconnected in block <Selecao>.
+   It will be removed from the design.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Comparators                                          : 2
+ 4-bit comparator equal                                : 1
+ 4-bit comparator greater                              : 1
+# Xors                                                 : 32
+ 1-bit xor2                                            : 32
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Selecao> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Selecao, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Selecao.ngr
+Top Level Output File Name         : Selecao
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 12
+
+Cell Usage :
+# BELS                             : 8
+#      GND                         : 1
+#      LUT2                        : 1
+#      LUT3                        : 6
+# IO Buffers                       : 11
+#      IBUF                        : 3
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s700anfgg484-5 
+
+ Number of Slices:                        4  out of   5888     0%  
+ Number of 4 input LUTs:                  7  out of  11776     0%  
+ Number of IOs:                          12
+ Number of bonded IOBs:                  11  out of    372     2%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 6.848ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 20 / 7
+-------------------------------------------------------------------------
+Delay:               6.848ns (Levels of Logic = 3)
+  Source:            Op<2> (PAD)
+  Destination:       Zop<3> (PAD)
+
+  Data Path: Op<2> to Zop<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   0.824   0.710  Op_2_IBUF (Op_2_IBUF)
+     LUT2:I0->O            1   0.561   0.357  Flg<1>1 (Flg_1_OBUF)
+     OBUF:I->O                 4.396          Flg_1_OBUF (Flg<1>)
+    ----------------------------------------
+    Total                      6.848ns (5.781ns logic, 1.067ns route)
+                                       (84.4% logic, 15.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.16 secs
+ 
+--> 
+
+
+Total memory usage is 513312 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   30 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

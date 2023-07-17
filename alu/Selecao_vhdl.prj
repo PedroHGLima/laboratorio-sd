@@ -1,0 +1,7 @@
+vhdl work "/home/ise/xixilinx/alu/fa.vhd"
+vhdl work "/home/ise/xixilinx/alu/fourbitfa.vhd"
+vhdl work "/home/ise/xixilinx/alu/subtraction.vhd"
+vhdl work "/home/ise/xixilinx/alu/increment.vhd"
+vhdl work "/home/ise/xixilinx/alu/compl.vhd"
+vhdl work "/home/ise/xixilinx/alu/comparador.vhd"
+vhdl work "/home/ise/xixilinx/alu/Selecao.vhd"
