@@ -1,0 +1,31 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/ise/xixilinx/testes_ops_4/Selecao_isim_beh.exe -prj /home/ise/xixilinx/testes_ops_4/Selecao_beh.prj work.Selecao 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/ise/xixilinx/testes_ops_4/fa.vhd" into library work
+Parsing VHDL file "/home/ise/xixilinx/testes_ops_4/fourbitfa.vhd" into library work
+Parsing VHDL file "/home/ise/xixilinx/testes_ops_4/subtraction.vhd" into library work
+Parsing VHDL file "/home/ise/xixilinx/testes_ops_4/increment.vhd" into library work
+Parsing VHDL file "/home/ise/xixilinx/testes_ops_4/compl.vhd" into library work
+Parsing VHDL file "/home/ise/xixilinx/testes_ops_4/comparador.vhd" into library work
+Parsing VHDL file "/home/ise/xixilinx/testes_ops_4/Selecao.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 95592 KB
+Fuse CPU Usage: 470 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture behavioral of entity fa [fa_default]
+Compiling architecture behavioral of entity fourbitfa [fourbitfa_default]
+Compiling architecture behavioral of entity compl [compl_default]
+Compiling architecture behavioral of entity subtraction [subtraction_default]
+Compiling architecture behavioral of entity increment [increment_default]
+Compiling architecture behavioral of entity comparador [comparador_default]
+Compiling architecture behavioral of entity selecao
+Time Resolution for simulation is 1ps.
+Compiled 15 VHDL Units
+Built simulation executable /home/ise/xixilinx/testes_ops_4/Selecao_isim_beh.exe
+Fuse Memory Usage: 104220 KB
+Fuse CPU Usage: 510 ms
+GCC CPU Usage: 190 ms

@@ -1,0 +1,48 @@
+V3 37
+FL /home/ise/xixilinx/alu/comparador.vhd 2023/07/17.20:56:46 P.20131013
+EN work/comparador 1689632526 FL /home/ise/xixilinx/alu/comparador.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/comparador/Behavioral 1689632527 \
+      FL /home/ise/xixilinx/alu/comparador.vhd EN work/comparador 1689632526
+FL /home/ise/xixilinx/alu/compl.vhd 2023/07/17.20:01:54 P.20131013
+EN work/compl 1689632520 FL /home/ise/xixilinx/alu/compl.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/compl/Behavioral 1689632521 \
+      FL /home/ise/xixilinx/alu/compl.vhd EN work/compl 1689632520 CP fourbitfa
+FL /home/ise/xixilinx/alu/fa.vhd 2023/05/16.16:59:50 P.20131013
+EN work/fa 1689632516 FL /home/ise/xixilinx/alu/fa.vhd PB ieee/std_logic_1164 1381692176
+AR work/fa/Behavioral 1689632517 \
+      FL /home/ise/xixilinx/alu/fa.vhd EN work/fa 1689632516
+FL /home/ise/xixilinx/alu/fourbitfa.vhd 2023/07/17.20:01:11 P.20131013
+EN work/fourbitfa 1689632518 FL /home/ise/xixilinx/alu/fourbitfa.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/fourbitfa/Behavioral 1689632519 \
+      FL /home/ise/xixilinx/alu/fourbitfa.vhd EN work/fourbitfa 1689632518 CP fa
+FL /home/ise/xixilinx/alu/increment.vhd 2023/07/17.20:47:58 P.20131013
+EN work/increment 1689632524 FL /home/ise/xixilinx/alu/increment.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/increment/Behavioral 1689632525 \
+      FL /home/ise/xixilinx/alu/increment.vhd EN work/increment 1689632524 \
+      CP fourbitfa
+FL /home/ise/xixilinx/alu/Selecao.vhd 2023/07/17.20:56:44 P.20131013
+EN work/Selecao 1689632528 FL /home/ise/xixilinx/alu/Selecao.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/Selecao/Behavioral 1689632529 \
+      FL /home/ise/xixilinx/alu/Selecao.vhd EN work/Selecao 1689632528 \
+      CP fourbitfa CP compl CP subtraction CP increment CP comparador
+FL /home/ise/xixilinx/alu/subtraction.vhd 2023/07/17.20:02:27 P.20131013
+EN work/subtraction 1689632522 FL /home/ise/xixilinx/alu/subtraction.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/subtraction/Behavioral 1689632523 \
+      FL /home/ise/xixilinx/alu/subtraction.vhd EN work/subtraction 1689632522 \
+      CP fourbitfa
+FL /home/ise/xixilinx/testes_ops_4/comparador.vhd 2023/07/17.20:53:41 P.20131013
+FL /home/ise/xixilinx/testes_ops_4/compl.vhd 2023/07/17.20:01:54 P.20131013
+FL /home/ise/xixilinx/testes_ops_4/fa.vhd 2023/05/16.16:59:50 P.20131013
+FL /home/ise/xixilinx/testes_ops_4/fourbitfa.vhd 2023/07/17.20:01:11 P.20131013
+FL /home/ise/xixilinx/testes_ops_4/increment.vhd 2023/07/17.20:47:58 P.20131013
+FL /home/ise/xixilinx/testes_ops_4/Selecao.vhd 2023/07/17.20:54:34 P.20131013
+FL /home/ise/xixilinx/testes_ops_4/subtraction.vhd 2023/07/17.20:02:27 P.20131013
+FL /home/sd/Documents/testes_ops/fa.vhd 2023/05/16.13:59:50 P.20131013
+FL /home/sd/Documents/testes_ops/fourbitfa.vhd 2023/06/06.14:10:30 P.20131013
+FL /home/sd/Documents/testes_ops/Selecao.vhd 2023/07/04.14:45:51 P.20131013

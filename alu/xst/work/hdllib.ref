@@ -1,0 +1,15 @@
+EN compl NULL /home/ise/xixilinx/alu/compl.vhd sub00/vhpl06 1689632520
+EN fa NULL /home/ise/xixilinx/alu/fa.vhd sub00/vhpl00 1689632516
+AR selecao behavioral /home/ise/xixilinx/alu/Selecao.vhd sub00/vhpl05 1689632529
+EN increment NULL /home/ise/xixilinx/alu/increment.vhd sub00/vhpl10 1689632524
+AR comparador behavioral /home/ise/xixilinx/alu/comparador.vhd sub00/vhpl14 1689632527
+AR subtraction behavioral /home/ise/xixilinx/alu/subtraction.vhd sub00/vhpl09 1689632523
+EN subtraction NULL /home/ise/xixilinx/alu/subtraction.vhd sub00/vhpl08 1689632522
+EN incremet NULL /home/ise/xixilinx/testes_ops_4/increment.vhd sub00/vhpl12 1689626829
+AR fa behavioral /home/ise/xixilinx/alu/fa.vhd sub00/vhpl01 1689632517
+AR compl behavioral /home/ise/xixilinx/alu/compl.vhd sub00/vhpl07 1689632521
+AR fourbitfa behavioral /home/ise/xixilinx/alu/fourbitfa.vhd sub00/vhpl03 1689632519
+EN selecao NULL /home/ise/xixilinx/alu/Selecao.vhd sub00/vhpl04 1689632528
+EN comparador NULL /home/ise/xixilinx/alu/comparador.vhd sub00/vhpl13 1689632526
+AR increment behavioral /home/ise/xixilinx/alu/increment.vhd sub00/vhpl11 1689632525
+EN fourbitfa NULL /home/ise/xixilinx/alu/fourbitfa.vhd sub00/vhpl02 1689632518
