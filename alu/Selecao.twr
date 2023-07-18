@@ -40,41 +40,68 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
+Clock CLOCK_50 to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+Flg<0>      |   11.522(R)|CLOCK_50_BUFGP    |   0.000|
+Flg<1>      |   11.967(R)|CLOCK_50_BUFGP    |   0.000|
+Flg<2>      |   10.946(R)|CLOCK_50_BUFGP    |   0.000|
+Flg<3>      |   11.530(R)|CLOCK_50_BUFGP    |   0.000|
+Zop<0>      |   10.794(R)|CLOCK_50_BUFGP    |   0.000|
+Zop<1>      |   11.053(R)|CLOCK_50_BUFGP    |   0.000|
+Zop<2>      |   11.955(R)|CLOCK_50_BUFGP    |   0.000|
+Zop<3>      |   11.995(R)|CLOCK_50_BUFGP    |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock CLOCK_50
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_50       |    2.557|         |         |         |
+---------------+---------+---------+---------+---------+
+
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-Op<0>          |Flg<0>         |    8.327|
-Op<0>          |Flg<1>         |    8.149|
-Op<0>          |Flg<2>         |    8.129|
-Op<0>          |Zop<0>         |    8.250|
-Op<0>          |Zop<1>         |    8.019|
-Op<0>          |Zop<2>         |    7.922|
-Op<0>          |Zop<3>         |    8.474|
-Op<1>          |Flg<0>         |    8.939|
-Op<1>          |Flg<2>         |    8.706|
-Op<1>          |Zop<0>         |    8.487|
-Op<1>          |Zop<1>         |    8.631|
-Op<1>          |Zop<2>         |    8.499|
-Op<1>          |Zop<3>         |    8.742|
-Op<2>          |Flg<0>         |    9.584|
-Op<2>          |Flg<1>         |    9.409|
-Op<2>          |Flg<2>         |    9.582|
-Op<2>          |Zop<0>         |    8.477|
-Op<2>          |Zop<1>         |    9.476|
-Op<2>          |Zop<2>         |    9.375|
-Op<2>          |Zop<3>         |    8.697|
+Op<0>          |Flg<0>         |    8.563|
+Op<0>          |Flg<1>         |    8.864|
+Op<0>          |Flg<2>         |    8.179|
+Op<0>          |Flg<3>         |    9.113|
+Op<0>          |Zop<0>         |    7.775|
+Op<0>          |Zop<1>         |    8.248|
+Op<0>          |Zop<2>         |    9.079|
+Op<0>          |Zop<3>         |    9.430|
+Op<1>          |Flg<0>         |    8.657|
+Op<1>          |Flg<1>         |    9.507|
+Op<1>          |Flg<2>         |    8.290|
+Op<1>          |Flg<3>         |    8.776|
+Op<1>          |Zop<0>         |    8.962|
+Op<1>          |Zop<1>         |    9.203|
+Op<1>          |Zop<2>         |    9.980|
+Op<1>          |Zop<3>         |    9.982|
+Op<2>          |Flg<0>         |    8.409|
+Op<2>          |Flg<1>         |    8.949|
+Op<2>          |Flg<2>         |    8.116|
+Op<2>          |Flg<3>         |    8.643|
+Op<2>          |Zop<0>         |    8.649|
+Op<2>          |Zop<1>         |    8.869|
+Op<2>          |Zop<2>         |    8.980|
+Op<2>          |Zop<3>         |    8.507|
 ---------------+---------------+---------+
 
 
-Analysis completed Mon Jul 17 22:22:18 2023 
+Analysis completed Tue Jul 18 01:57:29 2023 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 377 MB
+Peak Memory Usage: 378 MB
 
 
 

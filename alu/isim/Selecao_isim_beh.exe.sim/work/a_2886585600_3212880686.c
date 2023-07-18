@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ise/xixilinx/testes_ops_4/subtraction.vhd";
+static const char *ng0 = "/home/ise/laboratorio-sd/alu/subtraction.vhd";
 extern char *IEEE_P_2592010699;
 
 char *ieee_p_2592010699_sub_207919886985903570_503743352(char *, char *, char *, char *);
@@ -37,7 +37,7 @@ static void work_a_2886585600_3212880686_p_0(char *t0)
     char *t6;
     char *t7;
 
-LAB0:    xsi_set_current_line(58, ng0);
+LAB0:    xsi_set_current_line(60, ng0);
 
 LAB3:    t1 = (t0 + 1032U);
     t2 = *((char **)t1);
@@ -74,11 +74,11 @@ static void work_a_2886585600_3212880686_p_1(char *t0)
     char *t13;
     char *t14;
 
-LAB0:    xsi_set_current_line(59, ng0);
+LAB0:    xsi_set_current_line(61, ng0);
 
 LAB3:    t2 = (t0 + 1192U);
     t3 = *((char **)t2);
-    t2 = (t0 + 6048U);
+    t2 = (t0 + 6008U);
     t4 = ieee_p_2592010699_sub_207919886985903570_503743352(IEEE_P_2592010699, t1, t3, t2);
     t5 = (t1 + 12U);
     t6 = *((unsigned int *)t5);

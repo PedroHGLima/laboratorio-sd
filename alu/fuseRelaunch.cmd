@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/ise/laboratorio-sd/alu/Selecao_isim_beh.exe" -prj "/home/ise/laboratorio-sd/alu/Selecao_beh.prj" "work.Selecao" 

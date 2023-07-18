@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ise/xixilinx/testes_ops_4/fourbitfa.vhd";
+static const char *ng0 = "/home/ise/laboratorio-sd/alu/fourbitfa.vhd";
 extern char *IEEE_P_2592010699;
 
 unsigned char ieee_p_2592010699_sub_3488768496604610246_503743352(char *, unsigned char , unsigned char );
@@ -38,7 +38,7 @@ static void work_a_1026395308_3212880686_p_0(char *t0)
     char *t6;
     char *t7;
 
-LAB0:    xsi_set_current_line(64, ng0);
+LAB0:    xsi_set_current_line(63, ng0);
 
 LAB3:    t1 = (t0 + 2632U);
     t2 = *((char **)t1);
@@ -69,7 +69,7 @@ static void work_a_1026395308_3212880686_p_1(char *t0)
     char *t7;
     char *t8;
 
-LAB0:    xsi_set_current_line(65, ng0);
+LAB0:    xsi_set_current_line(64, ng0);
 
 LAB3:    t1 = (t0 + 2472U);
     t2 = *((char **)t1);
@@ -110,10 +110,10 @@ static void work_a_1026395308_3212880686_p_2(char *t0)
     char *t17;
     char *t18;
 
-LAB0:    xsi_set_current_line(67, ng0);
+LAB0:    xsi_set_current_line(66, ng0);
     t1 = (t0 + 2632U);
     t2 = *((char **)t1);
-    t1 = (t0 + 8529);
+    t1 = (t0 + 8465);
     t4 = 1;
     if (4U == 4U)
         goto LAB5;
@@ -179,7 +179,7 @@ static void work_a_1026395308_3212880686_p_3(char *t0)
     char *t11;
     char *t12;
 
-LAB0:    xsi_set_current_line(68, ng0);
+LAB0:    xsi_set_current_line(67, ng0);
 
 LAB3:    t1 = (t0 + 2472U);
     t2 = *((char **)t1);
@@ -216,7 +216,7 @@ static void work_a_1026395308_3212880686_p_4(char *t0)
     char *t7;
     char *t8;
 
-LAB0:    xsi_set_current_line(69, ng0);
+LAB0:    xsi_set_current_line(68, ng0);
 
 LAB3:    t1 = (t0 + 2472U);
     t2 = *((char **)t1);
@@ -252,7 +252,7 @@ static void work_a_1026395308_3212880686_p_5(char *t0)
     char *t11;
     char *t12;
 
-LAB0:    xsi_set_current_line(70, ng0);
+LAB0:    xsi_set_current_line(69, ng0);
 
 LAB3:    t1 = (t0 + 2472U);
     t2 = *((char **)t1);

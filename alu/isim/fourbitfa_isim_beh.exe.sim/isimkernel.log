@@ -1,0 +1,28 @@
+Command line:
+   fourbitfa_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49284
+
+Mon Jul 17 23:48:02 2023
+
+
+ Elaboration Time: 0.03 sec
+
+ Current Memory Usage: 198.603 Meg
+
+ Total Signals          : 31
+ Total Nets             : 26
+ Total Signal Drivers   : 14
+ Total Blocks           : 6
+ Total Primitive Blocks : 5
+ Total Processes        : 14
+ Total Traceable Variables  : 8
+ Total Scalar Nets and Variables : 386
+
+ Total Simulation Time: 0.04 sec
+
+ Current Memory Usage: 276.201 Meg
+
+Mon Jul 17 23:48:09 2023
+

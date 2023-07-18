@@ -5,99 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/Selecao</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/Selecao.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/Selecao.vhd</arg>&quot;.
+<msg type="error" file="HDLParsers" num="808" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/laboratorio-sd/alu/Selecao.vhd</arg>&quot; Line <arg fmt="%d" index="2">146</arg>. <arg fmt="%s" index="3">and</arg> can not have such operands in this context.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/Selecao/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/Selecao.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/Selecao.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/comparador</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/comparador.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/comparador.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/comparador/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/comparador.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/comparador.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/compl</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/compl.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/compl.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/compl/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/compl.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/compl.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/increment</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/increment.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/increment.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/increment/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/increment.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/increment.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/subtraction</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/subtraction.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/subtraction.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/subtraction/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/subtraction.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/subtraction.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/fourbitfa</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/fourbitfa.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/fourbitfa.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/fourbitfa/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/fourbitfa.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/fourbitfa.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/fa</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/fa.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/fa.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/fa/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">/home/ise/xixilinx/testes_ops_4/fa.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">/home/ise/xixilinx/alu/fa.vhd</arg>&quot;.
-</msg>
-
-<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/xixilinx/alu/Selecao.vhd</arg>&quot; line <arg fmt="%d" index="2">151</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;add_out&gt;, &lt;add_flags&gt;, &lt;comp_out&gt;, &lt;comp_flags&gt;, &lt;sub_out&gt;, &lt;sub_flags&gt;, &lt;inc_out&gt;, &lt;inc_flags&gt;, &lt;qual_out&gt;</arg>
-</msg>
-
-<msg type="warning" file="Xst" num="1305" delta="old" >Output &lt;<arg fmt="%s" index="1">Zq&lt;3&gt;</arg>&gt; is never assigned. Tied to value <arg fmt="%s" index="2">0</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">C_in</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">sub_cout</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">state</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="new" >Signal &lt;<arg fmt="%s" index="1">qual_flags</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">inc_cout</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">comp_cout</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">add_cout</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">add_cin</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">B</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0101</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">A</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">1100</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="1290" delta="old" >Hierarchical block &lt;<arg fmt="%s" index="1">ADD1</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">Selecao</arg>&gt;.
-It will be removed from the design.
-</msg>
-
-<msg type="warning" file="Xst" num="1290" delta="old" >Hierarchical block &lt;<arg fmt="%s" index="1">COMT</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">Selecao</arg>&gt;.
-It will be removed from the design.
-</msg>
-
-<msg type="warning" file="Xst" num="1290" delta="old" >Hierarchical block &lt;<arg fmt="%s" index="1">SUB</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">Selecao</arg>&gt;.
-It will be removed from the design.
-</msg>
-
-<msg type="warning" file="Xst" num="1290" delta="old" >Hierarchical block &lt;<arg fmt="%s" index="1">INC</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">Selecao</arg>&gt;.
-It will be removed from the design.
+<msg type="error" file="HDLParsers" num="820" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/laboratorio-sd/alu/Selecao.vhd</arg>&quot; Line <arg fmt="%d" index="2">146</arg>. Type of actual ports is not compatible with type of ports of <arg fmt="%s" index="3">counter_seconds</arg>.
 </msg>
 
 </messages>

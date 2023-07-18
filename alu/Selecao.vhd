@@ -19,6 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -33,6 +34,7 @@ entity Selecao is
     Port ( Op : in  STD_LOGIC_VECTOR (2 downto 0);
 --			  A :	in STD_LOGIC_VECTOR (3 downto 0);
 --			  B :	in STD_LOGIC_VECTOR (3 downto 0);
+			  CLOCK_50: in STD_LOGIC;
 			  C_in : STD_LOGIC;
            Zop : out  STD_LOGIC_VECTOR (3 downto 0);
 			  Flg : out STD_LOGIC_VECTOR (3 downto 0));
@@ -42,6 +44,15 @@ end Selecao;
 architecture Behavioral of Selecao is
 	type state_type is (recebe_qqr,recebe_op,mostra_resultado);
 	signal state: state_type;
+
+-- Declaracao do modulo do contador, utilizado para conseguir os inputs
+Component counter_seconds is
+    generic(t_max : integer := 100000000);		-- tempo real (~2s)
+--	 generic(t_max : integer := 10);					-- tempo teste
+    port(CLOCK_50: in std_logic;
+    counter_out: out unsigned(3 downto 0) := "0000"
+    );
+end component;
 
 -- Declaracao do fulladder de 4 bits, que sera usado na adicao
 Component fourbitfa is
@@ -119,13 +130,24 @@ end component;
 --end component;
 
 -- Declaracao dos sinais onde serao armazenados os resultados dos modulos
-signal A : STD_LOGIC_VECTOR (3 downto 0) := "1100";
-signal B : STD_LOGIC_VECTOR (3 downto 0) := "0101";
+signal A : STD_LOGIC_VECTOR (3 downto 0);
+signal B : STD_LOGIC_VECTOR (3 downto 0);
+
+signal counter_val0 : unsigned (3 downto 0);
+signal counter_val1 : unsigned (3 downto 0);
+signal CLOCK_B : STD_LOGIC;
+
 signal add_out, add_flags, sub_out, sub_flags, comp_out, comp_flags, inc_out, inc_flags, qual_out, qual_flags : STD_LOGIC_VECTOR (3 downto 0);
 signal add_cin, add_cout, sub_cout, comp_cout, inc_cout : STD_LOGIC;
 --signal S : STD_LOGIC_VECTOR (3 downto 0);
 
 begin
+
+	counter0: counter_seconds port map(CLOCK_50, counter_val0);
+	counter1: counter_seconds port map(CLOCK_B, counter_val1);
+	CLOCK_B <= CLOCK_50 when A="1111";
+	A <= STD_LOGIC_VECTOR(counter_val0);
+	B <= STD_LOGIC_VECTOR(counter_val1);
     -- 4 operacoes obrigatorias
 	 -------------------------------------------------------------------
     -- Soma
@@ -146,7 +168,7 @@ begin
 	-------------------------------------------------------------------
 	-- Comparador
 	QUAL: comparador port map(A, B, qual_out);
---
+
 --	-- Potencia de 2
 --	POT: potencia port map(Xp => A, Y => B, C_outp =>pot_cout, Zp => pot_out, Flagsp => pot_flags);
 --

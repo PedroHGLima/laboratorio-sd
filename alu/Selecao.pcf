@@ -1,18 +1,19 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Jul 17 22:22:06 2023
+// Written by: Map P.20131013 on Tue Jul 18 01:57:17 2023
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "Flg<1>" LOCATE = SITE "T19" LEVEL 1;
 COMP "Op<0>" LOCATE = SITE "U10" LEVEL 1;
 COMP "Op<1>" LOCATE = SITE "U8" LEVEL 1;
 COMP "Op<2>" LOCATE = SITE "T9" LEVEL 1;
 COMP "Flg<0>" LOCATE = SITE "R20" LEVEL 1;
-COMP "Flg<1>" LOCATE = SITE "T19" LEVEL 1;
-COMP "Flg<2>" LOCATE = SITE "U20" LEVEL 1;
 COMP "Flg<3>" LOCATE = SITE "U19" LEVEL 1;
-COMP "Zop<0>" LOCATE = SITE "V19" LEVEL 1;
+COMP "Flg<2>" LOCATE = SITE "U20" LEVEL 1;
 COMP "Zop<1>" LOCATE = SITE "V20" LEVEL 1;
-COMP "Zop<2>" LOCATE = SITE "Y22" LEVEL 1;
+COMP "Zop<0>" LOCATE = SITE "V19" LEVEL 1;
+COMP "CLOCK_50" LOCATE = SITE "E12" LEVEL 1;
 COMP "Zop<3>" LOCATE = SITE "W21" LEVEL 1;
+COMP "Zop<2>" LOCATE = SITE "Y22" LEVEL 1;
 SCHEMATIC END;
 

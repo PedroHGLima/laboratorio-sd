@@ -13,5 +13,7 @@ NET "Op[2]" LOC = T9;
 NET "Op[1]" LOC = U8;
 NET "Op[0]" LOC = U10;
 
+NET "CLOCK_50" LOC = "E12";
+
 # PlanAhead Generated physical constraints 
 

@@ -5,7 +5,7 @@ Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
 ise -dd _ngo -nt timestamp -uc fa.ucf -p xc3s700an-fgg484-5 Selecao.ngc
 Selecao.ngd
 
-Reading NGO file "/home/ise/xixilinx/alu/Selecao.ngc" ...
+Reading NGO file "/home/ise/laboratorio-sd/alu/Selecao.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -27,7 +27,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 395960 kilobytes
+Total memory usage is 492924 kilobytes
 
 Writing NGD file "Selecao.ngd" ...
 Total REAL time to NGDBUILD completion:  1 sec
