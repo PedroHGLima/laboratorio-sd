@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/ise/xixilinx/testes_ops_4/Selecao_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/xixilinx/testes_ops_4/Selecao_isim_beh.wdb 
+Running: /home/ise/laboratorio-sd/alu/Selecao_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/laboratorio-sd/alu/Selecao_isim_beh.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 ----------------------------------------------------------------------
 WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
@@ -13,8 +13,7 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# isim force add /selecao/a 0100 -radix bin
-# run 1.00us
-# isim force add /selecao/a 0101 -radix bin
-# run 1.00us
+# isim force add /selecao/clock_50 1 -radix bin -value 0 -radix bin -time 10 ns -repeat 20 ns
+# isim force add /selecao/op 101 -radix bin
+# run 65us
 # exit 0

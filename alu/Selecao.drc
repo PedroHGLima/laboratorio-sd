@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Jul 17 22:22:20 2023
+Tue Jul 18 01:57:31 2023
 
 drc -z Selecao.ncd Selecao.pcf
 

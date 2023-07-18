@@ -21,13 +21,13 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ise/xixilinx/testes_ops_4/contador.vhd";
+static const char *ng0 = "/home/ise/laboratorio-sd/alu/counter_seconds.vhd";
 extern char *IEEE_P_1242562249;
 
 char *ieee_p_1242562249_sub_1006216973935652998_1035706684(char *, char *, char *, char *, int );
 
 
-static void work_a_1593392166_3212880686_p_0(char *t0)
+static void work_a_3784580252_3212880686_p_0(char *t0)
 {
     char t15[16];
     unsigned char t1;
@@ -70,14 +70,14 @@ LAB2:    xsi_set_current_line(22, ng0);
     t4 = (t0 + 1768U);
     t8 = *((char **)t4);
     t9 = *((int *)t8);
-    t10 = (t9 <= 100000000);
+    t10 = (t9 <= 10);
     if (t10 != 0)
         goto LAB8;
 
 LAB10:    xsi_set_current_line(25, ng0);
     t2 = (t0 + 1352U);
     t4 = *((char **)t2);
-    t2 = (t0 + 5304U);
+    t2 = (t0 + 5344U);
     t5 = ieee_p_1242562249_sub_1006216973935652998_1035706684(IEEE_P_1242562249, t15, t4, t2, 1);
     t8 = (t15 + 12U);
     t16 = *((unsigned int *)t8);
@@ -124,7 +124,7 @@ LAB11:    xsi_size_not_matching(4U, t17, 0);
 
 }
 
-static void work_a_1593392166_3212880686_p_1(char *t0)
+static void work_a_3784580252_3212880686_p_1(char *t0)
 {
     char *t1;
     char *t2;
@@ -155,9 +155,9 @@ LAB4:    goto LAB2;
 }
 
 
-extern void work_a_1593392166_3212880686_init()
+extern void work_a_3784580252_3212880686_init()
 {
-	static char *pe[] = {(void *)work_a_1593392166_3212880686_p_0,(void *)work_a_1593392166_3212880686_p_1};
-	xsi_register_didat("work_a_1593392166_3212880686", "isim/contador_isim_beh.exe.sim/work/a_1593392166_3212880686.didat");
+	static char *pe[] = {(void *)work_a_3784580252_3212880686_p_0,(void *)work_a_3784580252_3212880686_p_1};
+	xsi_register_didat("work_a_3784580252_3212880686", "isim/Selecao_isim_beh.exe.sim/work/a_3784580252_3212880686.didat");
 	xsi_register_executes(pe);
 }

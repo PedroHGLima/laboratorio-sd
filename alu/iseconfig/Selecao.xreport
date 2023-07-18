@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2023-07-17T22:28:40</DateModified>
+  <DateModified>2023-07-18T18:12:54</DateModified>
   <ModuleName>Selecao</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/ise/xixilinx/alu/iseconfig/Selecao.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/xixilinx/alu/</ImplementationReportsDirectory>
+  <SavedFilePath>/home/ise/laboratorio-sd/alu/iseconfig/Selecao.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/ise/laboratorio-sd/alu/</ImplementationReportsDirectory>
   <DateInitialized>2023-06-13T13:28:20</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
