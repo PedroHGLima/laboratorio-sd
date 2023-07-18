@@ -6,7 +6,35 @@
 \usepackage{indentfirst}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{listings}
+\graphicspath{{images/}}
+\usepackage{xcolor}
+\usepackage{float}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -48,7 +76,7 @@
 		\begin{tabbing}
 			Alunos\qquad\qquad\= Pedro Henrique Grave Lima\\
 			\>Marina Sangineto Jucá\\
-            \> Arthur Trucco\\
+            \> Arthur N Trucco\\
             \> Rodrigo Leal \\
             \> Luiz Felipe Cantanhede Cristino \\
 			Professor\> Roberto Gonçalves Pacheco \\
@@ -83,41 +111,198 @@ Para a realização deste trabalho foi-se desenvolvido e testado um código em l
 \section{Operações Obrigatórias}
 
 
-\subsection{Soma}
+\subsection{Adição}
 
-\begin{figure}[h]
+
+Para implementação da operação de adição, foi-se necessária a implementação, primeiramente, de um \textit{full adder} de 1 bit, para que, a partir dele, construir um \textit{full adder} de 4 bits.
+
+\subsubsection{1 bit full adder}
+
+\begin{figure}[H]
 \caption{Soma}
-
 \centering
 \includegraphics[width=5cm]{Figuras/figura_1.jpg}
 \label{figura:qualquernome}
 \end{figure}
+
+\begin{lstlisting}[language=VHDL]
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity fa is
+    Port ( A : in  STD_LOGIC;
+           B : in  STD_LOGIC;
+           Cin : in  STD_LOGIC;
+           Cout : out  STD_LOGIC;
+           Y : out  STD_LOGIC);
+end fa;
+
+architecture Behavioral of fa is
+
+begin
+	-- funcao logica do fa de 1 bit
+	Y <= (A xor B) xor Cin;
+	Cout <= (A and B) or ((A xor B) and Cin);
+	
+end Behavioral;
+\end{lstlisting}
+
+
+\subsubsection{4 bit full adder}
+
+
+\begin{figure}[H]
+\caption{Soma}
+\centering
+\includegraphics[width=5cm]{Figuras/figura_1.jpg}
+\label{figura:qualquernome}
+\end{figure}
+
+
+\begin{lstlisting}[language=VHDL]
+    library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity fourbitfa is
+    Port ( X : in  STD_LOGIC_VECTOR (3 downto 0);
+           Y : in  STD_LOGIC_VECTOR (3 downto 0);
+           C_in : in  STD_LOGIC;
+           C_out : out  STD_LOGIC;
+           Z : out  STD_LOGIC_VECTOR (3 downto 0);
+			  Flags : out STD_LOGIC_VECTOR (3 downto 0));
+end fourbitfa;
+
+architecture Behavioral of fourbitfa is
+
+
+Component fa is
+    Port ( A : in  STD_LOGIC;
+           B : in  STD_LOGIC;
+           Cin : in  STD_LOGIC;
+           Cout : out  STD_LOGIC;
+           Y : out  STD_LOGIC);
+end component;
+
+signal c1, c2, c3, c4 : STD_LOGIC;
+signal s : STD_LOGIC_VECTOR (3 downto 0);
+
+begin
+
+-- fa de 4 bits e composto de 4 fas de 1 bit
+fa0: fa port map(x(0), y(0), C_in, c1, s(0));
+fa1: fa port map(x(1), y(1), c1, c2, s(1));
+fa2: fa port map(x(2), y(2), c2, c3, s(2));
+fa3: fa port map(x(3), y(3), c3, c4, s(3));
+
+Z <= s;
+C_out <= c4;
+
+Flags(3) <= '1' when S = "0000" else '0'; 		-- zero
+Flags(2) <= not c4 and C_in;							-- negativo
+Flags(1) <= c4;											-- cout
+Flags(0) <= c4 and (not C_in); 						-- overflow
+
+end Behavioral;
+\end{lstlisting}
 
 \subsection{Subtração em Complemento de 2}
+Este módulo é constituído pela adição da primeira entrada Xs com o complemento de 2 da segunda entrada Ys.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Soma}
-
 \centering
 \includegraphics[width=5cm]{Figuras/figura_1.jpg}
 \label{figura:qualquernome}
 \end{figure}
+
+\begin{lstlisting}[language=VHDL]
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity subtraction is
+    Port ( Xs : in  STD_LOGIC_VECTOR (3 downto 0);
+           Ys : in  STD_LOGIC_VECTOR (3 downto 0);
+           C_outs : out  STD_LOGIC;
+           Zs : out  STD_LOGIC_VECTOR (3 downto 0);
+		   Flagss :out STD_LOGIC_VECTOR (3 downto 0)
+		   );
+end subtraction;
+
+architecture Behavioral of subtraction is
+
+
+Component fourbitfa is
+    Port ( X : in  STD_LOGIC_VECTOR (3 downto 0);
+           Y : in  STD_LOGIC_VECTOR (3 downto 0);
+           C_in : in  STD_LOGIC;
+           C_out : out  STD_LOGIC;
+           Z : out  STD_LOGIC_VECTOR (3 downto 0);
+		   Flags :out STD_LOGIC_VECTOR (3 downto 0)
+		   );
+end component;
+
+--para entradas e saidas do component
+signal A, B : STD_LOGIC_VECTOR (3 downto 0);
+
+begin
+	-- adicao de A + (-B) em complemento de dois
+	-- Adicionamos A + C2(B), fazendo o complemento com o not e Cin=1
+	A <= Xs;
+	B <= not Ys;
+	
+	fulla : fourbitfa port map(X => A, Y => B, C_in => '1', C_out => C_outs, Z => Zs, Flags => Flagss);
+
+end Behavioral;
+\end{lstlisting}
+
 
 \subsection{Incremento de +1}
+Este módulo soma o bit +1 à entrada Xi.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Soma}
-
 \centering
 \includegraphics[width=5cm]{Figuras/figura_1.jpg}
 \label{figura:qualquernome}
 \end{figure}
+
+\begin{lstlisting}[language=VHDL]
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+
+entity increment is
+    Port ( Xi : in  STD_LOGIC_VECTOR (3 downto 0);
+           C_outi : out  STD_LOGIC;
+           Zi : out  STD_LOGIC_VECTOR (3 downto 0);
+           Flagsi :out STD_LOGIC_VECTOR (3 downto 0)
+           );
+end increment;
+
+architecture Behavioral of increment is
+
+
+Component fourbitfa is
+    Port ( X : in  STD_LOGIC_VECTOR (3 downto 0);
+           Y : in  STD_LOGIC_VECTOR (3 downto 0);
+           C_in : in  STD_LOGIC;
+           C_out : out  STD_LOGIC;
+           Z : out  STD_LOGIC_VECTOR (3 downto 0);
+		   Flags :out STD_LOGIC_VECTOR (3 downto 0)
+		   );
+end component;
+
+begin
+	-- simples adicao do valor 1 ao valor de entrada X
+    ADD1: fourbitfa port map(Xi, "0001", '0', C_outi, Zi, Flagsi);
+
+end Behavioral;
+\end{lstlisting}
 
 \subsection{Troca de Sinal}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Soma}
-
 \centering
 \includegraphics[width=5cm]{Figuras/figura_1.jpg}
 \label{figura:qualquernome}
@@ -127,18 +312,107 @@ Para a realização deste trabalho foi-se desenvolvido e testado um código em l
 \section{Operações Livres}
 
 \subsection{Multiplicação}
+A então operação de multiplicação foi implementada utilizando componentes ja implementados \textit{full adders} de 4 bits. Graças a limitação de LEDs na placa, a saída foi 'truncada' de forma que só mostra-se os quatro bits menos significantes, indicando \textit{overflow} caso o produto tenha mais que quatro bits.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Soma}
-
 \centering
 \includegraphics[width=5cm]{Figuras/figura_1.jpg}
 \label{figura:qualquernome}
 \end{figure}
 
+\begin{lstlisting}[language=VHDL]
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity four_bit_multiplier is
+    Port ( Xm : in  STD_LOGIC_VECTOR (3 downto 0);
+           Ym : in  STD_LOGIC_VECTOR (3 downto 0);
+			  C_outm : out STD_LOGIC;
+           Zm : out  STD_LOGIC_VECTOR (3 downto 0);
+			  Flagsm: out STD_LOGIC_VECTOR (3 downto 0));
+end four_bit_multiplier;
+
+architecture Behavioral of four_bit_multiplier is
+
+component fourbitfa is
+    Port ( X : in  STD_LOGIC_VECTOR (3 downto 0);
+           Y : in  STD_LOGIC_VECTOR (3 downto 0);
+           C_in : in  STD_LOGIC;
+           C_out : out  STD_LOGIC;
+           Z : out  STD_LOGIC_VECTOR (3 downto 0);
+			  Flags : out STD_LOGIC_VECTOR (3 downto 0));	  
+end component;
+
+    signal XY: std_logic_vector(15 downto 0);
+	 -- Produto P
+	 signal P: std_logic_vector(7 downto 0);
+-- AND Product terms:
+    signal K0, K1, K2:  std_logic_vector (3 downto 0);
+-- Y Inputs (B0 has three bits of AND product)
+    signal conn0, conn1, conn2:  std_logic_vector (3 downto 0);
+
+begin
+    XY(0)<= Xm(0) and Ym(0);
+	 XY(1)<= Xm(1) and Ym(0);
+	 XY(2)<= Xm(2) and Ym(0);
+	 XY(3)<= Xm(3) and Ym(0);
+	 
+    XY(4)<= Xm(0) and Ym(1);
+	 XY(5)<= Xm(1) and Ym(1);
+	 XY(6)<= Xm(2) and Ym(1);
+	 XY(7)<= Xm(3) and Ym(1);
+	
+    XY(8)<= Xm(0) and Ym(2);
+	 XY(9)<= Xm(1) and Ym(2);
+	 XY(10)<= Xm(2) and Ym(2);
+	 XY(11)<= Xm(3) and Ym(2);
+	 
+    XY(12)<= Xm(0) and Ym(3);
+	 XY(13)<= Xm(1) and Ym(3);
+	 XY(14)<= Xm(2) and Ym(3);
+	 XY(15)<= Xm(3) and Ym(3);
+	 
+	 K0 <= (XY(7),XY(6),XY(5),XY(4));
+	 K1 <= (XY(11),XY(10),XY(9),XY(8));
+	 K2 <= (XY(15),XY(14),XY(13),XY(12));
+	 conn0 <= ('0',XY(3),XY(2),XY(1));
+	 
+	 P(0) <= XY(0);
+	 
+FBM1: fourbitfa port map ( X=>K0,Y=>conn0,C_in=>'0',
+                                   C_out=>conn1(3),
+                                   Z(3)=>conn1(2),Z(2)=>conn1(1)
+											  ,Z(1)=>conn1(0),Z(0)=>P(1));
+											
+FBM2: fourbitfa port map ( X=>K1,Y=>conn1,C_in=>'0',
+                                   C_out=>conn2(3),
+                                   Z(3)=>conn2(2),Z(2)=>conn2(1)
+											  ,Z(1)=>conn2(0),Z(0)=>P(2));
+											  
+FBM3: fourbitfa port map ( X=>K2,Y=>conn2,C_in=>'0',
+                                   C_out=>P(7),
+                                   Z => P(6 downto 3)
+											  );
+
+-- conferindo overflow								
+Flagsm(0) <= '1' when P > "00001111" else '0';
+
+-- conferind zero
+Flagsm(3) <= '1' when P = "00000000" else '0';
+
+--cout
+Flagsm(1) <= '0';
+
+--negativo
+Flagsm(2) <= Xm(3) xor Ym(3);
+
+end Behavioral;
+\end{lstlisting}
+
 \subsection{Mod (Resto)}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Soma}
 
 \centering
@@ -148,7 +422,7 @@ Para a realização deste trabalho foi-se desenvolvido e testado um código em l
 
 \subsection{Potência de 2}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Soma}
 
 \centering
@@ -157,19 +431,63 @@ Para a realização deste trabalho foi-se desenvolvido e testado um código em l
 \end{figure}
 
 \subsection{Comparador}
+Neste módulo, realizou-se a implementação de uma função de comparação, de forma que o \textit{input} Xq é comparado com o \textit{input} Yq, e indica-se, na saída se o primeiro é maior, igual ou menor.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Soma}
-
 \centering
 \includegraphics[width=5cm]{Figuras/figura_1.jpg}
 \label{figura:qualquernome}
 \end{figure}
 
+\begin{lstlisting}[language=VHDL]
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+
+entity comparador is
+    Port ( Xq : in  STD_LOGIC_VECTOR (3 downto 0);
+           Yq : in  STD_LOGIC_VECTOR (3 downto 0);
+           Zq : out  STD_LOGIC_VECTOR (3 downto 0));
+end comparador;
+
+architecture Behavioral of comparador is
+
+signal Greater : STD_LOGIC;
+signal Equal   : STD_LOGIC;
+signal Less    : STD_LOGIC;
+
+begin
+    process(Xq, Yq)
+    begin
+        if Xq > Yq then
+            Greater <= '1';
+            Equal   <= '0';
+            Less    <= '0';
+        elsif Xq = Yq then
+            Greater <= '0';
+            Equal   <= '1';
+            Less    <= '0';
+        else
+            Greater <= '0';
+            Equal   <= '0';
+            Less    <= '1';
+        end if;
+    end process;
+	 Zq(0) <= Less;
+	 Zq(1) <= Equal;
+	 Zq(2) <= Greater;
+	 -- A saida sera intepretada como "UGEL"
+	 -- Unsigned, Maior, Igual, Menor
+
+end Behavioral;
+\end{lstlisting}
+
+
 \section{Troca de Operações e Entradas}
 A fim de permitir que as operações sejam alterados para a execução de todas as funcionalidades presentes na ULA, foi proposto o desenvolvimento e aplicação do seguinte bloco de código:
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Exemplo}
 
 \centering
@@ -200,7 +518,7 @@ Dessa forma, temos a seção XXXXX responsável por alterar as operações conta
 
 Já para a inserção de diferentes entradas e produção de diferentes resultados, o que temos é a seguinte proposta:
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Exemplo}
 
 \centering
@@ -214,7 +532,7 @@ Basta que se altere os valores XXXXXX e YYYYYY.
 
 Com as operações construídas na ULA é possível, ao menos, produzir os seguintes resultados de exemplo para cada operação:
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Soma}
 
 \centering
@@ -222,7 +540,7 @@ Com as operações construídas na ULA é possível, ao menos, produzir os segui
 \label{figura:qualquernome}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Subtração em Complemento de 2}
 
 \centering
@@ -230,7 +548,7 @@ Com as operações construídas na ULA é possível, ao menos, produzir os segui
 \label{figura:qualquernome}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Incremento de +1}
 
 \centering
@@ -238,7 +556,7 @@ Com as operações construídas na ULA é possível, ao menos, produzir os segui
 \label{figura:qualquernome}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Troca de Sinal}
 
 \centering
@@ -246,7 +564,7 @@ Com as operações construídas na ULA é possível, ao menos, produzir os segui
 \label{figura:qualquernome}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Multiplicação}
 
 \centering
@@ -254,7 +572,7 @@ Com as operações construídas na ULA é possível, ao menos, produzir os segui
 \label{figura:qualquernome}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Mod}
 
 \centering
@@ -262,7 +580,7 @@ Com as operações construídas na ULA é possível, ao menos, produzir os segui
 \label{figura:qualquernome}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Potência de 2}
 
 \centering
@@ -270,7 +588,7 @@ Com as operações construídas na ULA é possível, ao menos, produzir os segui
 \label{figura:qualquernome}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Comparador}
 
 \centering
