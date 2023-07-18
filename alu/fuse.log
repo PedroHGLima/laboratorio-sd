@@ -6,6 +6,9 @@ Determining compilation order of HDL files
 Parsing VHDL file "/home/ise/laboratorio-sd/alu/fa.vhd" into library work
 Parsing VHDL file "/home/ise/laboratorio-sd/alu/fourbitfa.vhd" into library work
 Parsing VHDL file "/home/ise/laboratorio-sd/alu/subtraction.vhd" into library work
+Parsing VHDL file "/home/ise/laboratorio-sd/alu/MyXOR.vhd" into library work
+Parsing VHDL file "/home/ise/laboratorio-sd/alu/myand.vhd" into library work
+Parsing VHDL file "/home/ise/laboratorio-sd/alu/multiplica.vhd" into library work
 Parsing VHDL file "/home/ise/laboratorio-sd/alu/increment.vhd" into library work
 Parsing VHDL file "/home/ise/laboratorio-sd/alu/counter_seconds.vhd" into library work
 Parsing VHDL file "/home/ise/laboratorio-sd/alu/compl.vhd" into library work
@@ -13,11 +16,13 @@ Parsing VHDL file "/home/ise/laboratorio-sd/alu/comparador.vhd" into library wor
 Parsing VHDL file "/home/ise/laboratorio-sd/alu/Selecao.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 97100 KB
-Fuse CPU Usage: 510 ms
+Fuse Memory Usage: 98520 KB
+Fuse CPU Usage: 540 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
 Compiling architecture behavioral of entity counter_seconds [\counter_seconds(10)\]
 Compiling architecture behavioral of entity fa [fa_default]
 Compiling architecture behavioral of entity fourbitfa [fourbitfa_default]
@@ -25,11 +30,14 @@ Compiling architecture behavioral of entity compl [compl_default]
 Compiling architecture behavioral of entity subtraction [subtraction_default]
 Compiling architecture behavioral of entity increment [increment_default]
 Compiling architecture behavioral of entity comparador [comparador_default]
+Compiling architecture behavioral of entity myand [myand_default]
+Compiling architecture behavioral of entity MyXOR [myxor_default]
+Compiling architecture behavioral of entity multiplica [multiplica_default]
 Compiling architecture behavioral of entity selecao
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 18 VHDL Units
+Compiled 26 VHDL Units
 Built simulation executable /home/ise/laboratorio-sd/alu/Selecao_isim_beh.exe
-Fuse Memory Usage: 1191076 KB
-Fuse CPU Usage: 1160 ms
-GCC CPU Usage: 720 ms
+Fuse Memory Usage: 1196752 KB
+Fuse CPU Usage: 1100 ms
+GCC CPU Usage: 740 ms

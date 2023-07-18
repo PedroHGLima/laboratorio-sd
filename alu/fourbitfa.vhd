@@ -64,8 +64,8 @@ Z <= s;
 C_out <= c4;
 
 Flags(3) <= '1' when S = "0000" else '0'; 		-- zero
-Flags(2) <= not c4 and C_in;							-- negativo
+Flags(2) <= s(3);											-- negativo
 Flags(1) <= c4;											-- cout
-Flags(0) <= c4 and (not C_in); 						-- overflow
+Flags(0) <= c4 xor c3;			 						-- overflow
 
 end Behavioral;

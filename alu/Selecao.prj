@@ -1,6 +1,7 @@
 vhdl work "fa.vhd"
 vhdl work "fourbitfa.vhd"
 vhdl work "subtraction.vhd"
+vhdl work "multiplica.vhd"
 vhdl work "increment.vhd"
 vhdl work "counter_seconds.vhd"
 vhdl work "compl.vhd"
