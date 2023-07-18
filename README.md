@@ -3,9 +3,10 @@ Repositório para o projeto final da disciplina de Sistemas Digitais.
 ## Grupo
 - [Pedro Henrique Grave Lima](https://github.com/PedroHGLima)
 - [Marina Sangineto Jucá](https://github.com/MarinaSJ)
+- [Arthur Trucco](https://github.com/artrucco)
 <!--
 - [Rodrigo Leal]()
-- [Arthur Trucco]()
+- 
 - [Luiz Felipe Cantanhede]()
 -->
 
