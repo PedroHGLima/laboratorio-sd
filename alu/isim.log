@@ -14,6 +14,5 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # isim force add /selecao/clock_50 1 -radix bin -value 0 -radix bin -time 10 ns -repeat 20 ns
-# isim force add /selecao/op 101 -radix bin
 # run 65us
 # exit 0

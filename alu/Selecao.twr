@@ -45,14 +45,14 @@ Clock CLOCK_50 to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-Flg<0>      |   11.522(R)|CLOCK_50_BUFGP    |   0.000|
-Flg<1>      |   11.967(R)|CLOCK_50_BUFGP    |   0.000|
-Flg<2>      |   10.946(R)|CLOCK_50_BUFGP    |   0.000|
-Flg<3>      |   11.530(R)|CLOCK_50_BUFGP    |   0.000|
-Zop<0>      |   10.794(R)|CLOCK_50_BUFGP    |   0.000|
-Zop<1>      |   11.053(R)|CLOCK_50_BUFGP    |   0.000|
-Zop<2>      |   11.955(R)|CLOCK_50_BUFGP    |   0.000|
-Zop<3>      |   11.995(R)|CLOCK_50_BUFGP    |   0.000|
+Flg<0>      |   14.793(R)|CLOCK_50_IBUF     |   0.000|
+Flg<1>      |   14.367(R)|CLOCK_50_IBUF     |   0.000|
+Flg<2>      |   14.125(R)|CLOCK_50_IBUF     |   0.000|
+Flg<3>      |   16.221(R)|CLOCK_50_IBUF     |   0.000|
+Zop<0>      |   14.472(R)|CLOCK_50_IBUF     |   0.000|
+Zop<1>      |   15.652(R)|CLOCK_50_IBUF     |   0.000|
+Zop<2>      |   13.572(R)|CLOCK_50_IBUF     |   0.000|
+Zop<3>      |   14.177(R)|CLOCK_50_IBUF     |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLOCK_50
@@ -60,41 +60,41 @@ Clock to Setup on destination clock CLOCK_50
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_50       |    2.557|         |         |         |
+CLOCK_50       |    2.573|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-Op<0>          |Flg<0>         |    8.563|
-Op<0>          |Flg<1>         |    8.864|
-Op<0>          |Flg<2>         |    8.179|
-Op<0>          |Flg<3>         |    9.113|
-Op<0>          |Zop<0>         |    7.775|
-Op<0>          |Zop<1>         |    8.248|
-Op<0>          |Zop<2>         |    9.079|
-Op<0>          |Zop<3>         |    9.430|
-Op<1>          |Flg<0>         |    8.657|
-Op<1>          |Flg<1>         |    9.507|
-Op<1>          |Flg<2>         |    8.290|
-Op<1>          |Flg<3>         |    8.776|
-Op<1>          |Zop<0>         |    8.962|
-Op<1>          |Zop<1>         |    9.203|
-Op<1>          |Zop<2>         |    9.980|
-Op<1>          |Zop<3>         |    9.982|
-Op<2>          |Flg<0>         |    8.409|
-Op<2>          |Flg<1>         |    8.949|
-Op<2>          |Flg<2>         |    8.116|
-Op<2>          |Flg<3>         |    8.643|
-Op<2>          |Zop<0>         |    8.649|
-Op<2>          |Zop<1>         |    8.869|
-Op<2>          |Zop<2>         |    8.980|
-Op<2>          |Zop<3>         |    8.507|
+Op<0>          |Flg<0>         |    9.747|
+Op<0>          |Flg<1>         |    9.753|
+Op<0>          |Flg<2>         |    9.718|
+Op<0>          |Flg<3>         |   10.801|
+Op<0>          |Zop<0>         |    8.755|
+Op<0>          |Zop<1>         |    9.341|
+Op<0>          |Zop<2>         |    9.016|
+Op<0>          |Zop<3>         |    9.207|
+Op<1>          |Flg<0>         |   10.460|
+Op<1>          |Flg<1>         |    9.941|
+Op<1>          |Flg<2>         |    9.928|
+Op<1>          |Flg<3>         |   10.415|
+Op<1>          |Zop<0>         |    9.176|
+Op<1>          |Zop<1>         |    9.134|
+Op<1>          |Zop<2>         |    8.934|
+Op<1>          |Zop<3>         |    8.900|
+Op<2>          |Flg<0>         |    8.571|
+Op<2>          |Flg<1>         |    8.393|
+Op<2>          |Flg<2>         |    8.557|
+Op<2>          |Flg<3>         |    9.172|
+Op<2>          |Zop<0>         |    9.655|
+Op<2>          |Zop<1>         |    9.841|
+Op<2>          |Zop<2>         |    9.413|
+Op<2>          |Zop<3>         |    8.912|
 ---------------+---------------+---------+
 
 
-Analysis completed Tue Jul 18 01:57:29 2023 
+Analysis completed Tue Jul 18 23:41:30 2023 
 --------------------------------------------------------------------------------
 
 Trace Settings:

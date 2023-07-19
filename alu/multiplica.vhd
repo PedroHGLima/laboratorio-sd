@@ -41,49 +41,81 @@ end multiplica;
 
 architecture Behavioral of multiplica is
 
-	component fa
-    Port ( A : in  STD_LOGIC;
-           B : in  STD_LOGIC;
-           Cin : in  STD_LOGIC;
-           Cout : out  STD_LOGIC;
-           Y : out  STD_LOGIC);	
-	end component;
-	
-	--Definindo termos parciais do produto
-	signal pp : STD_LOGIC_VECTOR(8 downto 0);
-	
-	--Definindo termos parciais da soma
-	signal psum : STD_LOGIC_VECTOR (2 downto 0);
-	
-	--Definindo carries produzidos ao longo das somas parciais
-	signal c : STD_LOGIC_VECTOR (5 downto 0);
+component fourbitfa is
+    Port ( X : in  STD_LOGIC_VECTOR (3 downto 0);
+           Y : in  STD_LOGIC_VECTOR (3 downto 0);
+           C_in : in  STD_LOGIC;
+           C_out : out  STD_LOGIC;
+           Z : out  STD_LOGIC_VECTOR (3 downto 0);
+			  Flags : out STD_LOGIC_VECTOR (3 downto 0));	  
+end component;
+
+    signal XY: std_logic_vector(15 downto 0);
+	 -- Produto P
+	 signal P: std_logic_vector(7 downto 0);
+-- AND Product terms:
+    signal K0, K1, K2:  std_logic_vector (3 downto 0);
+-- Y Inputs (B0 has three bits of AND product)
+    signal conn0, conn1, conn2:  std_logic_vector (3 downto 0);
 
 begin
---Para efeitos de projeto, so seram implementados resultados de 4 bits
---Bit 0:
-Zm(0) <= Xm(0) AND Ym(0);
+    XY(0)<= Xm(0) and Ym(0);
+	 XY(1)<= Xm(1) and Ym(0);
+	 XY(2)<= Xm(2) and Ym(0);
+	 XY(3)<= Xm(3) and Ym(0);
+	 
+    XY(4)<= Xm(0) and Ym(1);
+	 XY(5)<= Xm(1) and Ym(1);
+	 XY(6)<= Xm(2) and Ym(1);
+	 XY(7)<= Xm(3) and Ym(1);
+	
+    XY(8)<= Xm(0) and Ym(2);
+	 XY(9)<= Xm(1) and Ym(2);
+	 XY(10)<= Xm(2) and Ym(2);
+	 XY(11)<= Xm(3) and Ym(2);
+	 
+    XY(12)<= Xm(0) and Ym(3);
+	 XY(13)<= Xm(1) and Ym(3);
+	 XY(14)<= Xm(2) and Ym(3);
+	 XY(15)<= Xm(3) and Ym(3);
+	 
+	 K0 <= (XY(7),XY(6),XY(5),XY(4));
+	 K1 <= (XY(11),XY(10),XY(9),XY(8));
+	 K2 <= (XY(15),XY(14),XY(13),XY(12));
+	 conn0 <= ('0',XY(3),XY(2),XY(1));
+	 
+	 P(0) <= XY(0);
+	 
+FBM1: fourbitfa port map ( X=>K0,Y=>conn0,C_in=>'0',
+                                   C_out=>conn1(3),
+                                   Z(3)=>conn1(2),Z(2)=>conn1(1)
+											  ,Z(1)=>conn1(0),Z(0)=>P(1));
+											
+FBM2: fourbitfa port map ( X=>K1,Y=>conn1,C_in=>'0',
+                                   C_out=>conn2(3),
+                                   Z(3)=>conn2(2),Z(2)=>conn2(1)
+											  ,Z(1)=>conn2(0),Z(0)=>P(2));
+											  
+FBM3: fourbitfa port map ( X=>K2,Y=>conn2,C_in=>'0',
+                                   C_out=>P(7),
+                                   Z => P(6 downto 3)
+											  );
+											  
+Zm(0) <= P(0);
+Zm(1) <= P(1);
+Zm(2) <= P(2);
+Zm(3) <= P(3);
 
--- Bit 1:
-pp(0) <= Xm(1) AND Ym(0);
-pp(1) <= Ym(1) AND Xm(0);
+-- conferindo overflow											  
+Flagsm(0) <= '1' when P > "00001111" else '0';
 
-FA0 : fa port map (pp(0), pp(1), '0', c(0), Zm(1));
+-- conferind zero
+Flagsm(3) <= '1' when P = "00000000" else '0';
 
---Bit 2:
-pp(2) <= Xm(2) AND Ym(0);
-pp(3) <= Ym(1) AND Xm(1);
-pp(4) <= Ym(2) AND Xm(0);
+--cout
+Flagsm(1) <= '0';
 
-FA1 : fa port map (pp(2), pp(3), c(0) , c(1), psum(0));
-FA2 : fa port map (psum(0), pp(4), c(1) , c(2), Zm(2));
+--negativo
+Flagsm(2) <= Xm(3) xor Ym(3);
 
---Bit 3
-pp(5) <= Ym(0) AND Xm(3);
-pp(6) <= Ym(1) AND Xm(2);
-pp(7) <= Ym(2) AND Xm(1);
-pp(8) <= Ym(3) AND Xm(0);
-
-FA3 : fa port map (pp(5), pp(6), c(2) , c(3), psum(1));
-FA4 : fa port map (psum(1), pp(7), c(3) , c(4), psum(2));
-FA5 : fa port map (psum(2), pp(8), c(4) , c(5), Zm(3));
 end Behavioral;

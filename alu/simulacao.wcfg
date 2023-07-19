@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/ise/laboratorio-sd/alu/Selecao_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="selecao" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="29" />
+   <wvobject fp_name="/selecao/op" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">op[2:0]</obj_property>
+      <obj_property name="ObjectShortName">op[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/clock_50" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock_50</obj_property>
+      <obj_property name="ObjectShortName">clock_50</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/zop" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">zop[3:0]</obj_property>
+      <obj_property name="ObjectShortName">zop[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/flg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">flg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">flg[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/a" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">a[3:0]</obj_property>
+      <obj_property name="ObjectShortName">a[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/b" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">b[3:0]</obj_property>
+      <obj_property name="ObjectShortName">b[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/counter_val0" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">counter_val0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_val0[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/counter_val1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">counter_val1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_val1[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/clock_b" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock_b</obj_property>
+      <obj_property name="ObjectShortName">clock_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/add_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">add_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">add_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/add_flags" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">add_flags[3:0]</obj_property>
+      <obj_property name="ObjectShortName">add_flags[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/sub_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sub_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sub_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/sub_flags" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sub_flags[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sub_flags[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/comp_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">comp_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">comp_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/comp_flags" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">comp_flags[3:0]</obj_property>
+      <obj_property name="ObjectShortName">comp_flags[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/inc_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inc_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">inc_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/inc_flags" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inc_flags[3:0]</obj_property>
+      <obj_property name="ObjectShortName">inc_flags[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/qual_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">qual_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">qual_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/qual_flags" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">qual_flags[3:0]</obj_property>
+      <obj_property name="ObjectShortName">qual_flags[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/mult_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mult_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mult_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/mult_flags" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mult_flags[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mult_flags[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/xor_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">xor_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">xor_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/and_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">and_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">and_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/add_cin" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">add_cin</obj_property>
+      <obj_property name="ObjectShortName">add_cin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/add_cout" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">add_cout</obj_property>
+      <obj_property name="ObjectShortName">add_cout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/sub_cout" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sub_cout</obj_property>
+      <obj_property name="ObjectShortName">sub_cout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/comp_cout" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">comp_cout</obj_property>
+      <obj_property name="ObjectShortName">comp_cout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/inc_cout" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inc_cout</obj_property>
+      <obj_property name="ObjectShortName">inc_cout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/selecao/mult_cout" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mult_cout</obj_property>
+      <obj_property name="ObjectShortName">mult_cout</obj_property>
+   </wvobject>
+</wave_config>
