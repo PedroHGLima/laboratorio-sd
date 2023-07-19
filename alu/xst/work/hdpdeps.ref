@@ -1,57 +1,67 @@
-V3 52
+V3 60
 FL /home/ise/laboratorio-sd/alu/comparador.vhd 2023/07/17.22:47:33 P.20131013
-EN work/comparador 1689711121 FL /home/ise/laboratorio-sd/alu/comparador.vhd \
+EN work/comparador 1689723680 FL /home/ise/laboratorio-sd/alu/comparador.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/comparador/Behavioral 1689711122 \
-      FL /home/ise/laboratorio-sd/alu/comparador.vhd EN work/comparador 1689711121
+AR work/comparador/Behavioral 1689723681 \
+      FL /home/ise/laboratorio-sd/alu/comparador.vhd EN work/comparador 1689723680
 FL /home/ise/laboratorio-sd/alu/compl.vhd 2023/07/17.22:46:16 P.20131013
-EN work/compl 1689711115 FL /home/ise/laboratorio-sd/alu/compl.vhd \
+EN work/compl 1689723674 FL /home/ise/laboratorio-sd/alu/compl.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/compl/Behavioral 1689711116 \
-      FL /home/ise/laboratorio-sd/alu/compl.vhd EN work/compl 1689711115 \
+AR work/compl/Behavioral 1689723675 \
+      FL /home/ise/laboratorio-sd/alu/compl.vhd EN work/compl 1689723674 \
       CP fourbitfa
 FL /home/ise/laboratorio-sd/alu/counter_seconds.vhd 2023/07/18.01:56:55 P.20131013
-EN work/counter_seconds 1689711113 \
+EN work/counter_seconds 1689723672 \
       FL /home/ise/laboratorio-sd/alu/counter_seconds.vhd PB ieee/std_logic_1164 1381692176 \
       PB ieee/NUMERIC_STD 1381692181
-AR work/counter_seconds/behavioral 1689711114 \
-      FL /home/ise/laboratorio-sd/alu/counter_seconds.vhd EN work/counter_seconds 1689711113
+AR work/counter_seconds/behavioral 1689723673 \
+      FL /home/ise/laboratorio-sd/alu/counter_seconds.vhd EN work/counter_seconds 1689723672
 FL /home/ise/laboratorio-sd/alu/fa.vhd 2023/07/17.22:48:14 P.20131013
-EN work/fa 1689711109 FL /home/ise/laboratorio-sd/alu/fa.vhd \
+EN work/fa 1689723668 FL /home/ise/laboratorio-sd/alu/fa.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/fa/Behavioral 1689711110 \
-      FL /home/ise/laboratorio-sd/alu/fa.vhd EN work/fa 1689711109
+AR work/fa/Behavioral 1689723669 \
+      FL /home/ise/laboratorio-sd/alu/fa.vhd EN work/fa 1689723668
 FL /home/ise/laboratorio-sd/alu/fourbitfa.vhd 2023/07/18.17:28:33 P.20131013
-EN work/fourbitfa 1689711111 FL /home/ise/laboratorio-sd/alu/fourbitfa.vhd \
+EN work/fourbitfa 1689723670 FL /home/ise/laboratorio-sd/alu/fourbitfa.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/fourbitfa/Behavioral 1689711112 \
-      FL /home/ise/laboratorio-sd/alu/fourbitfa.vhd EN work/fourbitfa 1689711111 \
+AR work/fourbitfa/Behavioral 1689723671 \
+      FL /home/ise/laboratorio-sd/alu/fourbitfa.vhd EN work/fourbitfa 1689723670 \
       CP fa
 FL /home/ise/laboratorio-sd/alu/increment.vhd 2023/07/17.22:44:42 P.20131013
-EN work/increment 1689711119 FL /home/ise/laboratorio-sd/alu/increment.vhd \
+EN work/increment 1689723678 FL /home/ise/laboratorio-sd/alu/increment.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/increment/Behavioral 1689711120 \
-      FL /home/ise/laboratorio-sd/alu/increment.vhd EN work/increment 1689711119 \
+AR work/increment/Behavioral 1689723679 \
+      FL /home/ise/laboratorio-sd/alu/increment.vhd EN work/increment 1689723678 \
       CP fourbitfa
 FL /home/ise/laboratorio-sd/alu/multiplica.vhd 2023/07/18.19:49:45 P.20131013
-EN work/multiplica 1689711123 FL /home/ise/laboratorio-sd/alu/multiplica.vhd \
+EN work/multiplica 1689723686 FL /home/ise/laboratorio-sd/alu/multiplica.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/multiplica/Behavioral 1689711124 \
-      FL /home/ise/laboratorio-sd/alu/multiplica.vhd EN work/multiplica 1689711123 \
+AR work/multiplica/Behavioral 1689723687 \
+      FL /home/ise/laboratorio-sd/alu/multiplica.vhd EN work/multiplica 1689723686 \
       CP fa
-FL /home/ise/laboratorio-sd/alu/Selecao.vhd 2023/07/18.19:51:27 P.20131013
-EN work/Selecao 1689711125 FL /home/ise/laboratorio-sd/alu/Selecao.vhd \
-      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/Selecao/Behavioral 1689711126 \
-      FL /home/ise/laboratorio-sd/alu/Selecao.vhd EN work/Selecao 1689711125 \
-      CP counter_seconds CP fourbitfa CP compl CP subtraction CP increment \
-      CP comparador CP multiplica
-FL /home/ise/laboratorio-sd/alu/subtraction.vhd 2023/07/17.22:45:30 P.20131013
-EN work/subtraction 1689711117 FL /home/ise/laboratorio-sd/alu/subtraction.vhd \
+FL /home/ise/laboratorio-sd/alu/myand.vhd 2023/07/18.20:35:05 P.20131013
+EN work/myand 1689723682 FL /home/ise/laboratorio-sd/alu/myand.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/subtraction/Behavioral 1689711118 \
-      FL /home/ise/laboratorio-sd/alu/subtraction.vhd EN work/subtraction 1689711117 \
+AR work/myand/Behavioral 1689723683 \
+      FL /home/ise/laboratorio-sd/alu/myand.vhd EN work/myand 1689723682
+FL /home/ise/laboratorio-sd/alu/MyXOR.vhd 2023/07/18.20:17:55 P.20131013
+EN work/MyXOR 1689723684 FL /home/ise/laboratorio-sd/alu/MyXOR.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/MyXOR/Behavioral 1689723685 \
+      FL /home/ise/laboratorio-sd/alu/MyXOR.vhd EN work/MyXOR 1689723684
+FL /home/ise/laboratorio-sd/alu/Selecao.vhd 2023/07/18.20:36:53 P.20131013
+EN work/Selecao 1689723688 FL /home/ise/laboratorio-sd/alu/Selecao.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/Selecao/Behavioral 1689723689 \
+      FL /home/ise/laboratorio-sd/alu/Selecao.vhd EN work/Selecao 1689723688 \
+      CP counter_seconds CP fourbitfa CP compl CP subtraction CP increment \
+      CP comparador CP myand CP myxor CP multiplica
+FL /home/ise/laboratorio-sd/alu/subtraction.vhd 2023/07/17.22:45:30 P.20131013
+EN work/subtraction 1689723676 FL /home/ise/laboratorio-sd/alu/subtraction.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/subtraction/Behavioral 1689723677 \
+      FL /home/ise/laboratorio-sd/alu/subtraction.vhd EN work/subtraction 1689723676 \
       CP fourbitfa
 FL /home/ise/xixilinx/alu/comparador.vhd 2023/07/17.20:56:46 P.20131013
 FL /home/ise/xixilinx/alu/compl.vhd 2023/07/17.20:01:54 P.20131013
