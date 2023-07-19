@@ -10,6 +10,8 @@
 \graphicspath{{images/}}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage{wrapfig}
+
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -118,76 +120,16 @@ Para implementação da operação de adição, foi-se necessária a implementa�
 
 \subsubsection{1 bit full adder}
 
-\begin{figure}[H]
-\caption{Soma}
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
 \begin{lstlisting}[language=VHDL]
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
-entity fa is
-    Port ( A : in  STD_LOGIC;
-           B : in  STD_LOGIC;
-           Cin : in  STD_LOGIC;
-           Cout : out  STD_LOGIC;
-           Y : out  STD_LOGIC);
-end fa;
-
-architecture Behavioral of fa is
-
-begin
-	-- funcao logica do fa de 1 bit
-	Y <= (A xor B) xor Cin;
-	Cout <= (A and B) or ((A xor B) and Cin);
-	
-end Behavioral;
+Y <= (A xor B) xor Cin;
+Cout <= (A and B) or ((A xor B) and Cin);
 \end{lstlisting}
 
 
 \subsubsection{4 bit full adder}
 
 
-\begin{figure}[H]
-\caption{Soma}
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
-
 \begin{lstlisting}[language=VHDL]
-    library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
-entity fourbitfa is
-    Port ( X : in  STD_LOGIC_VECTOR (3 downto 0);
-           Y : in  STD_LOGIC_VECTOR (3 downto 0);
-           C_in : in  STD_LOGIC;
-           C_out : out  STD_LOGIC;
-           Z : out  STD_LOGIC_VECTOR (3 downto 0);
-			  Flags : out STD_LOGIC_VECTOR (3 downto 0));
-end fourbitfa;
-
-architecture Behavioral of fourbitfa is
-
-
-Component fa is
-    Port ( A : in  STD_LOGIC;
-           B : in  STD_LOGIC;
-           Cin : in  STD_LOGIC;
-           Cout : out  STD_LOGIC;
-           Y : out  STD_LOGIC);
-end component;
-
-signal c1, c2, c3, c4 : STD_LOGIC;
-signal s : STD_LOGIC_VECTOR (3 downto 0);
-
-begin
-
 -- fa de 4 bits e composto de 4 fas de 1 bit
 fa0: fa port map(x(0), y(0), C_in, c1, s(0));
 fa1: fa port map(x(1), y(1), c1, c2, s(1));
@@ -197,188 +139,75 @@ fa3: fa port map(x(3), y(3), c3, c4, s(3));
 Z <= s;
 C_out <= c4;
 
-Flags(3) <= '1' when S = "0000" else '0'; 		-- zero
-Flags(2) <= not c4 and C_in;							-- negativo
-Flags(1) <= c4;											-- cout
-Flags(0) <= c4 and (not C_in); 						-- overflow
-
-end Behavioral;
+Flags(3) <= '1' when S = "0000" else '0';       -- zero
+Flags(2) <= not c4 and C_in;				        -- negativo
+Flags(1) <= c4;	                                -- cout
+Flags(0) <= c4 and (not C_in); 					    -- overflow
 \end{lstlisting}
 
 \subsection{Subtração em Complemento de 2}
 Este módulo é constituído pela adição da primeira entrada Xs com o complemento de 2 da segunda entrada Ys.
 
-\begin{figure}[H]
-\caption{Soma}
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
 \begin{lstlisting}[language=VHDL]
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+-- adicao de A + (-B) em complemento de dois
+-- Adicionamos A + C2(B), fazendo o complemento com o not e Cin=1
+A <= Xs;
+B <= not Ys;
 
-entity subtraction is
-    Port ( Xs : in  STD_LOGIC_VECTOR (3 downto 0);
-           Ys : in  STD_LOGIC_VECTOR (3 downto 0);
-           C_outs : out  STD_LOGIC;
-           Zs : out  STD_LOGIC_VECTOR (3 downto 0);
-		   Flagss :out STD_LOGIC_VECTOR (3 downto 0)
-		   );
-end subtraction;
-
-architecture Behavioral of subtraction is
-
-
-Component fourbitfa is
-    Port ( X : in  STD_LOGIC_VECTOR (3 downto 0);
-           Y : in  STD_LOGIC_VECTOR (3 downto 0);
-           C_in : in  STD_LOGIC;
-           C_out : out  STD_LOGIC;
-           Z : out  STD_LOGIC_VECTOR (3 downto 0);
-		   Flags :out STD_LOGIC_VECTOR (3 downto 0)
-		   );
-end component;
-
---para entradas e saidas do component
-signal A, B : STD_LOGIC_VECTOR (3 downto 0);
-
-begin
-	-- adicao de A + (-B) em complemento de dois
-	-- Adicionamos A + C2(B), fazendo o complemento com o not e Cin=1
-	A <= Xs;
-	B <= not Ys;
-	
-	fulla : fourbitfa port map(X => A, Y => B, C_in => '1', C_out => C_outs, Z => Zs, Flags => Flagss);
-
-end Behavioral;
+fulla : fourbitfa port map(A, B, '1', C_outs, Zs, Flagss);
 \end{lstlisting}
 
 
 \subsection{Incremento de +1}
 Este módulo soma o bit +1 à entrada Xi.
 
-\begin{figure}[H]
-\caption{Soma}
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
 \begin{lstlisting}[language=VHDL]
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
-
-entity increment is
-    Port ( Xi : in  STD_LOGIC_VECTOR (3 downto 0);
-           C_outi : out  STD_LOGIC;
-           Zi : out  STD_LOGIC_VECTOR (3 downto 0);
-           Flagsi :out STD_LOGIC_VECTOR (3 downto 0)
-           );
-end increment;
-
-architecture Behavioral of increment is
-
-
-Component fourbitfa is
-    Port ( X : in  STD_LOGIC_VECTOR (3 downto 0);
-           Y : in  STD_LOGIC_VECTOR (3 downto 0);
-           C_in : in  STD_LOGIC;
-           C_out : out  STD_LOGIC;
-           Z : out  STD_LOGIC_VECTOR (3 downto 0);
-		   Flags :out STD_LOGIC_VECTOR (3 downto 0)
-		   );
-end component;
-
-begin
-	-- simples adicao do valor 1 ao valor de entrada X
-    ADD1: fourbitfa port map(Xi, "0001", '0', C_outi, Zi, Flagsi);
-
-end Behavioral;
+-- simples adicao do valor 1 ao valor de entrada X
+ADD1: fourbitfa port map(Xi, "0001", '0', C_outi, Zi, Flagsi);
 \end{lstlisting}
 
 \subsection{Troca de Sinal}
+A operação de troca de sinal é feita fazendo o complemento a dois do número em questão.
+\begin{lstlisting}[language=VHDL]
+-- Complemento a dois e feito com a inversao do numero e incremento +1
+A <= not Xcpl;
+B <= "0000";
 
-\begin{figure}[H]
-\caption{Soma}
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
+ADD1:fourbitfa port map(A, B, '1', C_outcpl, Zcpl, Flagscpl);
+\end{lstlisting}
 
 \section{Operações Livres}
 
 \subsection{Multiplicação}
 A então operação de multiplicação foi implementada utilizando componentes ja implementados \textit{full adders} de 4 bits. Graças a limitação de LEDs na placa, a saída foi 'truncada' de forma que só mostra-se os quatro bits menos significantes, indicando \textit{overflow} caso o produto tenha mais que quatro bits.
 
-\begin{figure}[H]
-\caption{Soma}
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
 \begin{lstlisting}[language=VHDL]
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+XY(0)<= Xm(0) and Ym(0);
+XY(1)<= Xm(1) and Ym(0);
+XY(2)<= Xm(2) and Ym(0);
+XY(3)<= Xm(3) and Ym(0);
 
-entity four_bit_multiplier is
-    Port ( Xm : in  STD_LOGIC_VECTOR (3 downto 0);
-           Ym : in  STD_LOGIC_VECTOR (3 downto 0);
-			  C_outm : out STD_LOGIC;
-           Zm : out  STD_LOGIC_VECTOR (3 downto 0);
-			  Flagsm: out STD_LOGIC_VECTOR (3 downto 0));
-end four_bit_multiplier;
+XY(4)<= Xm(0) and Ym(1);
+XY(5)<= Xm(1) and Ym(1);
+XY(6)<= Xm(2) and Ym(1);
+XY(7)<= Xm(3) and Ym(1);
 
-architecture Behavioral of four_bit_multiplier is
+XY(8)<= Xm(0) and Ym(2);
+XY(9)<= Xm(1) and Ym(2);
+XY(10)<= Xm(2) and Ym(2);
+XY(11)<= Xm(3) and Ym(2);
 
-component fourbitfa is
-    Port ( X : in  STD_LOGIC_VECTOR (3 downto 0);
-           Y : in  STD_LOGIC_VECTOR (3 downto 0);
-           C_in : in  STD_LOGIC;
-           C_out : out  STD_LOGIC;
-           Z : out  STD_LOGIC_VECTOR (3 downto 0);
-			  Flags : out STD_LOGIC_VECTOR (3 downto 0));	  
-end component;
+XY(12)<= Xm(0) and Ym(3);
+XY(13)<= Xm(1) and Ym(3);
+XY(14)<= Xm(2) and Ym(3);
+XY(15)<= Xm(3) and Ym(3);
 
-    signal XY: std_logic_vector(15 downto 0);
-	 -- Produto P
-	 signal P: std_logic_vector(7 downto 0);
--- AND Product terms:
-    signal K0, K1, K2:  std_logic_vector (3 downto 0);
--- Y Inputs (B0 has three bits of AND product)
-    signal conn0, conn1, conn2:  std_logic_vector (3 downto 0);
+K0 <= (XY(7),XY(6),XY(5),XY(4));
+K1 <= (XY(11),XY(10),XY(9),XY(8));
+K2 <= (XY(15),XY(14),XY(13),XY(12));
+conn0 <= ('0',XY(3),XY(2),XY(1));
 
-begin
-    XY(0)<= Xm(0) and Ym(0);
-	 XY(1)<= Xm(1) and Ym(0);
-	 XY(2)<= Xm(2) and Ym(0);
-	 XY(3)<= Xm(3) and Ym(0);
-	 
-    XY(4)<= Xm(0) and Ym(1);
-	 XY(5)<= Xm(1) and Ym(1);
-	 XY(6)<= Xm(2) and Ym(1);
-	 XY(7)<= Xm(3) and Ym(1);
-	
-    XY(8)<= Xm(0) and Ym(2);
-	 XY(9)<= Xm(1) and Ym(2);
-	 XY(10)<= Xm(2) and Ym(2);
-	 XY(11)<= Xm(3) and Ym(2);
-	 
-    XY(12)<= Xm(0) and Ym(3);
-	 XY(13)<= Xm(1) and Ym(3);
-	 XY(14)<= Xm(2) and Ym(3);
-	 XY(15)<= Xm(3) and Ym(3);
-	 
-	 K0 <= (XY(7),XY(6),XY(5),XY(4));
-	 K1 <= (XY(11),XY(10),XY(9),XY(8));
-	 K2 <= (XY(15),XY(14),XY(13),XY(12));
-	 conn0 <= ('0',XY(3),XY(2),XY(1));
-	 
-	 P(0) <= XY(0);
+P(0) <= XY(0);
 	 
 FBM1: fourbitfa port map ( X=>K0,Y=>conn0,C_in=>'0',
                                    C_out=>conn1(3),
@@ -394,6 +223,11 @@ FBM3: fourbitfa port map ( X=>K2,Y=>conn2,C_in=>'0',
                                    C_out=>P(7),
                                    Z => P(6 downto 3)
 											  );
+											  
+Zm(0) <= P(0);
+Zm(1) <= P(1);
+Zm(2) <= P(2);
+Zm(3) <= P(3);
 
 -- conferindo overflow								
 Flagsm(0) <= '1' when P > "00001111" else '0';
@@ -406,59 +240,25 @@ Flagsm(1) <= '0';
 
 --negativo
 Flagsm(2) <= Xm(3) xor Ym(3);
-
-end Behavioral;
 \end{lstlisting}
 
-\subsection{Mod (Resto)}
+\subsection{AND}
+Este módulo consiste na função lógica AND entre as duas entradas.
+\begin{lstlisting}[language=VHDL]
+Zand <= Xand and Yand;
+\end{lstlisting}
 
-\begin{figure}[H]
-\caption{Soma}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
-\subsection{Potência de 2}
-
-\begin{figure}[H]
-\caption{Soma}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
+\subsection{XOR}
+Este módulo consiste na função lógica AND entre as duas entradas.
+\begin{lstlisting}[language=VHDL]
+Zxor <= Xxor xor Yxor;
+\end{lstlisting}
 
 \subsection{Comparador}
 Neste módulo, realizou-se a implementação de uma função de comparação, de forma que o \textit{input} Xq é comparado com o \textit{input} Yq, e indica-se, na saída se o primeiro é maior, igual ou menor.
 
-\begin{figure}[H]
-\caption{Soma}
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
 \begin{lstlisting}[language=VHDL]
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
-
-entity comparador is
-    Port ( Xq : in  STD_LOGIC_VECTOR (3 downto 0);
-           Yq : in  STD_LOGIC_VECTOR (3 downto 0);
-           Zq : out  STD_LOGIC_VECTOR (3 downto 0));
-end comparador;
-
-architecture Behavioral of comparador is
-
-signal Greater : STD_LOGIC;
-signal Equal   : STD_LOGIC;
-signal Less    : STD_LOGIC;
-
-begin
-    process(Xq, Yq)
+process(Xq, Yq)
     begin
         if Xq > Yq then
             Greater <= '1';
@@ -474,26 +274,66 @@ begin
             Less    <= '1';
         end if;
     end process;
-	 Zq(0) <= Less;
-	 Zq(1) <= Equal;
-	 Zq(2) <= Greater;
-	 -- A saida sera intepretada como "UGEL"
-	 -- Unsigned, Maior, Igual, Menor
-
-end Behavioral;
+Zq(0) <= Less;
+Zq(1) <= Equal;
+Zq(2) <= Greater;
 \end{lstlisting}
 
 
 \section{Troca de Operações e Entradas}
 A fim de permitir que as operações sejam alterados para a execução de todas as funcionalidades presentes na ULA, foi proposto o desenvolvimento e aplicação do seguinte bloco de código:
+\begin{lstlisting}[language=VHDL]
+process (CLOCK_50) is
+   begin
+		case op is
+		-- verifica qual operacao esta sendo selecionada
+			when "000" => 
+			--soma
+				Zop <= add_out;
+				Flg <= add_flags;
 
-\begin{figure}[H]
-\caption{Exemplo}
+			when "001" =>
+			--complemento 2
+				 Zop <= comp_out;
+				 Flg <= comp_flags;
 
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
+			when "010" =>
+			--subtrao
+				 Zop <= sub_out;
+				 Flg <= sub_flags;
+
+			when "011" =>
+			--incremento +1
+				Zop <= inc_out;
+				Flg <= inc_flags;
+			----------------------------------------
+			when "100" =>
+			--comparador
+				Zop <= qual_out;
+				Flg <= "0000";
+
+			when "101" =>
+			--and
+				Zop <= and_out;
+				Flg <= "0000";
+
+			when "110" =>
+			--xor
+				Zop <= xor_out;
+				Flg <= "0000";
+
+			when "111" =>
+			--multiplicacao
+				Zop <= mult_out;
+				Flg <= mult_flags;
+			--------------------------------------------
+			when others =>
+			--caso de erro
+				Zop <= "0000";
+				Flg <= "0000";
+        end case;
+    end process;
+\end{lstlisting}
 
 Onde temos a seguinte tabela para definir o código de cada operação:
 
@@ -501,99 +341,34 @@ Onde temos a seguinte tabela para definir o código de cada operação:
 \centering
 \begin{tabular}{c|c}
 Código & Operação \\ \hline
-111	& Soma 		\\\hline
-111 & Subtração	\\\hline
-111 & Incremento \\\hline
-111 & Sinal \\\hline
-111 & Multiplicação \\\hline
-111 & Mod \\\hline
-111 & Potência 2 \\\hline
+000	& Soma 		\\\hline
+001 & Subtração	\\\hline
+010 & Incremento \\\hline
+011 & Sinal \\\hline
+100 & Multiplicação \\\hline
+101 & AND \\\hline
+110 & XOR \\\hline
+%101 & Mod \\\hline
+%110 & Potência 2 \\\hline
 111 & Comparador
 \end{tabular}
-\caption{Pontos coletados para o ensaio à vazio;}
 \label{vazio}
 \end{table}
 
-Dessa forma, temos a seção XXXXX responsável por alterar as operações contanto que se altere as entradas XXXXX.
-
-Já para a inserção de diferentes entradas e produção de diferentes resultados, o que temos é a seguinte proposta:
-
-\begin{figure}[H]
-\caption{Exemplo}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
-Basta que se altere os valores XXXXXX e YYYYYY.
-
 \section{Resultados e Flags}
 
-Com as operações construídas na ULA é possível, ao menos, produzir os seguintes resultados de exemplo para cada operação:
-
+Simulando a ULA com o código modificado para uma resposta mais facilmente simulável (contador acelerado) obtemos o seguinte gráfico, onde é possível visualizar a saída de cada um dos módulos para um determinado instante de tempo.
 \begin{figure}[H]
-\caption{Soma}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
+    \centering
+    \includegraphics[width=13cm]{imagens/simu_sem_zoom.png}
+    \caption{Resultados de simulação}
+    \label{fig:simu}
 \end{figure}
-
 \begin{figure}[H]
-\caption{Subtração em Complemento de 2}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
-\begin{figure}[H]
-\caption{Incremento de +1}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
-\begin{figure}[H]
-\caption{Troca de Sinal}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
-\begin{figure}[H]
-\caption{Multiplicação}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
-\begin{figure}[H]
-\caption{Mod}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
-\begin{figure}[H]
-\caption{Potência de 2}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
-\end{figure}
-
-\begin{figure}[H]
-\caption{Comparador}
-
-\centering
-\includegraphics[width=5cm]{Figuras/figura_1.jpg}
-\label{figura:qualquernome}
+    \centering
+    \includegraphics[width=13cm]{imagens/simu_com_zoom.png}
+    \caption{Zoom mostrando a variação do contador que define o valor de A}
+    \label{fig:simu_zoom}
 \end{figure}
 
 É válido notar que no resultado de cada operação também está presente os valores de todas as flags requisitados para plena compreensão do resultado: Zero, negativo, carry out e overflow.
