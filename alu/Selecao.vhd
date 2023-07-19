@@ -42,8 +42,8 @@ architecture Behavioral of Selecao is
 
 -- Declaracao do modulo do contador, utilizado para conseguir os inputs
 Component counter_seconds is
---    generic(t_max : integer := 100000000);		-- tempo real (~2s)
-	 generic(t_max : integer := 10);					-- tempo teste
+    generic(t_max : integer := 100000000);		-- tempo real (~2s)
+--	 generic(t_max : integer := 10);					-- tempo teste
     port(CLOCK_50: in std_logic;
     counter_out: out unsigned(3 downto 0) := "0000"
     );
