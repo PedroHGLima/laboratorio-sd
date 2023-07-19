@@ -90,7 +90,7 @@
 	
 	\begin{center}
 		\vspace{\fill}
-		Rio de Janeiro, \today
+		Rio de Janeiro, 18 de julho de 2023
 	\end{center}
 \end{titlepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,10 +105,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introdução}
 
-Este documento tem como objetivo relatar o desenvolvimento do trabalho proposto. O trabalho constitui a construção de uma Unidade Lógica Aritmética (ULA) de quatro bits que seja capaz de realizar oito operações distintas. Dentre essas operações, quatro são obrigatórias, sendo elas as operações de soma, subtração em complemento de 2, incremento de +1 e troca sinal. Entre as não obrigatórias, optamos por realizar as operações de multiplicação, mod, potência de 2 e comparador.
+Este documento tem como objetivo relatar o desenvolvimento do trabalho proposto. O trabalho constitui a construção de uma Unidade Lógica Aritmética (ULA) de quatro bits que seja capaz de realizar oito operações distintas. Dentre essas operações, quatro são obrigatórias, sendo elas as operações de soma, subtração em complemento de 2, incremento de +1 e troca sinal. Entre as não obrigatórias, optamos por realizar as operações de multiplicação, AND, XOR e comparador.
 \section{Desenvolvimento}
 
-Para a realização deste trabalho foi-se desenvolvido e testado um código em linguagem de descrição de hardware (VHDL) no laboratório da disciplina, onde foram produzidos os resultados bases em uma placa FPGA. A partir desses resultados, o projeto continuou a ser desenvolvido de maneira remota através do uso de softwares e ferramentas de produção, como o Quartus Prime Lite, GitHub e Overleaf. 
+Para a realização deste trabalho foi-se desenvolvido e testado um código em linguagem de descrição de hardware (VHDL) no laboratório da disciplina, onde foram produzidos os resultados bases em uma placa FPGA. A partir desses resultados, o projeto continuou a ser desenvolvido de maneira remota através do uso de softwares e ferramentas de produção, como o Quartus Prime Lite e Xilinx ISE Design Suite. Todo o código para o projeto está disponibilizado no repositório no \href{https://github.com/PedroHGLima/laboratorio-sd}{GitHub}.
 
 \section{Operações Obrigatórias}
 
@@ -249,7 +249,7 @@ Zand <= Xand and Yand;
 \end{lstlisting}
 
 \subsection{XOR}
-Este módulo consiste na função lógica AND entre as duas entradas.
+Este módulo consiste na função lógica XOR entre as duas entradas.
 \begin{lstlisting}[language=VHDL]
 Zxor <= Xxor xor Yxor;
 \end{lstlisting}
@@ -340,7 +340,7 @@ Onde temos a seguinte tabela para definir o código de cada operação:
 \begin{table}[htb]
 \centering
 \begin{tabular}{c|c}
-Código & Operação \\ \hline
+Código & Operação \\ \hline \hline
 000	& Soma 		\\\hline
 001 & Subtração	\\\hline
 010 & Incremento \\\hline
